@@ -1,11 +1,11 @@
 import './App.css';
 
-import { TestComponent } from '@orbitrc/react-components'
+import { Button } from 'swingby'
 
 function App() {
   return (
     <div className="App">
-      <TestComponent />
+      <Button />
     </div>
   );
 }

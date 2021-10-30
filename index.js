@@ -1,3 +1,7 @@
-import TestComponent from './components/TestComponent'
+import TestComponent from './src/components/TestComponent'
+import Button from './src/components/Button'
 
-export { TestComponent }
+export {
+  TestComponent,
+  Button,
+}

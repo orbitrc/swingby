@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "paths": {
+      "components": ["./src/components/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "scripts"
+  ]
+}

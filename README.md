@@ -1,4 +1,4 @@
-@orbitrc/react-components
+Swingby
 =========================
 
-A components package using for orbitrc.io
+A React components framework
