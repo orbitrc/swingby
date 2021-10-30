@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <Button />
+      <div className="bg-primary">Hello!</div>
     </div>
   );
 }
