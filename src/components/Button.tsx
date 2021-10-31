@@ -1,5 +1,7 @@
 import React from 'react'
 
+import classNames from 'classnames'
+
 import './Button.scss'
 
 interface ButtonProps {
@@ -9,8 +11,13 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
+  const classes = classNames({
+    's-button': true,
+    's-pa-md': true,
+  });
+
   return (
-    <button className="s-button"
+    <button className={classes}
       onClick={props.onClick}
     >
       {props.label}
