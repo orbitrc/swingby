@@ -28,6 +28,6 @@ const Button = (props: ButtonProps) => {
 
 Button.defaultProps = {
   label: 'Button',
-}
+};
 
 export default Button
