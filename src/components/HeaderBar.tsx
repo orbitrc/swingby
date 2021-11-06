@@ -7,6 +7,7 @@ import './HeaderBar.scss'
 interface HeaderBarProps {
   children: React.ReactNode;
   height: string;
+  logo: string;
 }
 
 const HeaderBar = (props: HeaderBarProps) => {
@@ -29,6 +30,7 @@ const HeaderBar = (props: HeaderBarProps) => {
 
 HeaderBar.defaultProps = {
   height: '48px',
+  logo: '',
 };
 
 export default HeaderBar
