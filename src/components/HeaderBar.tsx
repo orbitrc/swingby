@@ -23,6 +23,9 @@ const HeaderBar = (props: HeaderBarProps) => {
     <div className={classes}
       style={styles}
     >
+      <img className="logo"
+        href={props.logo}
+      />
       {props.children}
     </div>
   );
