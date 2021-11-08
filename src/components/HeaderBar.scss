@@ -1,6 +1,7 @@
 .s-header-bar {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   position: fixed;
   width: 100%;
   background-color: var(--s-primary);

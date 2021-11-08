@@ -4,9 +4,11 @@ import './src/scss/global.scss'
 import TestComponent from './src/components/TestComponent'
 import Button from './src/components/Button'
 import HeaderBar from './src/components/HeaderBar'
+import HeaderBarLink from './src/components/HeaderBarLink'
 
 export {
   TestComponent,
   Button,
   HeaderBar,
+  HeaderBarLink,
 }

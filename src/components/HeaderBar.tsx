@@ -24,7 +24,10 @@ const HeaderBar = (props: HeaderBarProps) => {
     width: `calc(${props.height} - 16px)`,
     height: `calc(${props.height} - 16px)`,
   };
-  console.log(logoImgStyles);
+
+  const headerBarLinks = props.children.filter(child => {
+    return child.type.name === 'HeaderBarLink';
+  });
 
   return (
     <div className={classes}
@@ -34,7 +37,14 @@ const HeaderBar = (props: HeaderBarProps) => {
         src={props.logo}
         style={logoImgStyles}
       />
-      {props.children}
+      {/* Header bar links */}
+      {headerBarLinks.map((link, index: number) => (
+        React.cloneElement(link, {
+          key: index,
+          height: props.height,
+        })
+      ))
+      }
     </div>
   );
 }

@@ -1,7 +1,3 @@
-body {
-  font-weight: bold;
-}
-
 .bg-primary {
   background-color: var(--s-primary);
 }
@@ -10,6 +6,21 @@ body {
   background-color: var(--s-secondary);
 }
 
+//=================
+// Font Weights
+//=================
+
+.text-weight-regular {
+  font-weight: 400;
+}
+
+.text-weight-bold {
+  font-weight: 700;
+}
+
+//=======================
+// Margins and Paddings
+//=======================
 
 .s-pa-md {
   padding: 8px 8px;
