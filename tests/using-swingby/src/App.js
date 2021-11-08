@@ -5,7 +5,9 @@ import { Button, HeaderBar } from 'swingby'
 function App() {
   return (
     <div className="App">
-      <HeaderBar />
+      <HeaderBar
+        logo="https://raw.githubusercontent.com/orbitrc/orbit-logo/master/orbit-logo.svg"
+      />
       <Button />
       <div className="bg-primary">Hello!</div>
     </div>
