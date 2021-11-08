@@ -4,4 +4,15 @@ $secondary: #1a4dac;
 :root {
   --s-primary: #{$primary};
   --s-secondary: #{$secondary};
+
+  --breakpoint-sm-min: 0;
+  --breakpoint-sm-max: 599px;
+}
+
+:root {
+  --s-size-xs: 0;
+  --s-size-sm: 600px;
+  --s-size-md: 1024px;
+  --s-size-lg: 1440px;
+  --s-size-xl: 1920px;
 }
