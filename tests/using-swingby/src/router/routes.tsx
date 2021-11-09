@@ -1,12 +1,12 @@
 import React from 'react'
-import { RouteProps } from 'react-router-dom'
+import { RouteObject } from 'react-router-dom'
 
 import MainLayout from '../layouts/MainLayout'
 
 // const MainLayout = React.lazy(() => import('../layouts/MainLayout'));
 const Index = React.lazy(() => import('../pages/Index'));
 
-const routes: RouteProps[] = [
+const routes: RouteObject[] = [
   {
     path: '/',
     element: <MainLayout />,

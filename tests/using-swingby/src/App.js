@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css';
@@ -19,6 +20,7 @@ function App() {
                 path={route.path}
                 key={index}
                 element={route.element}
+                childRoute={route.children}
               />
             );
           })}

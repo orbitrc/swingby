@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation, RouteObject } from 'react-router-dom'
 
 import {
   Layout,
@@ -10,10 +9,12 @@ import {
 } from 'swingby'
 
 interface MainLayoutProps {
-  children: React.ReactNode;
+  children: RouteObject[];
 }
 
 const MainLayout = (props: MainLayoutProps) => {
+  const location = useLocation();
+
   return (
     <Layout className="main-layout">
       <HeaderBar
@@ -31,6 +32,7 @@ const MainLayout = (props: MainLayoutProps) => {
       </HeaderBar>
       <PageContainer>
         <Routes>
+          <Route path={location.pathname} />
         </Routes>
       </PageContainer>
     </Layout>
