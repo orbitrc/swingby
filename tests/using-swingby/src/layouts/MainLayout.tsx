@@ -1,12 +1,19 @@
 import React from 'react'
 
+import { Routes, Route } from 'react-router-dom'
+
 import {
   Layout,
   HeaderBar,
   HeaderBarLink,
+  PageContainer,
 } from 'swingby'
 
-const MainLayout = () => {
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+
+const MainLayout = (props: MainLayoutProps) => {
   return (
     <Layout className="main-layout">
       <HeaderBar
@@ -22,8 +29,16 @@ const MainLayout = () => {
         />
         <div>Hello!</div>
       </HeaderBar>
+      <PageContainer>
+        <Routes>
+        </Routes>
+      </PageContainer>
     </Layout>
   );
 }
+
+MainLayout.defaultProps = {
+  children: [],
+};
 
 export default MainLayout
