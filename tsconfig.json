@@ -4,6 +4,8 @@
     "module": "esnext",
     "jsx": "react",
     "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "dist/dts",
     "allowSyntheticDefaultImports": true,
     "paths": {
       "components": ["./src/components/*"]
@@ -13,6 +15,7 @@
     "node_modules",
     "build",
     "dist",
-    "scripts"
+    "scripts",
+    "tests"
   ]
 }

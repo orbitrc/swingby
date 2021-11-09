@@ -1,25 +1,29 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import './App.css';
 
-import { Button, HeaderBar, HeaderBarLink } from 'swingby'
+import { Button } from 'swingby'
+
+import routes from './router/routes'
 
 function App() {
   return (
     <div className="App">
-      <HeaderBar
-        logo="https://raw.githubusercontent.com/orbitrc/orbit-logo/master/orbit-logo.svg"
-      >
-        <HeaderBarLink
-          className="text-weight-bold"
-          label="Lorem"
-        />
-        <HeaderBarLink
-          className="text-weight-bold"
-          label="Ipsum"
-        />
-        <div>Hello!</div>
-      </HeaderBar>
       <Button />
       <div className="bg-primary">Hello!</div>
+      <BrowserRouter>
+        <Routes>
+          {routes.map((route, index) => {
+            return (
+              <Route
+                path={route.path}
+                key={index}
+                element={route.element}
+              />
+            );
+          })}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
