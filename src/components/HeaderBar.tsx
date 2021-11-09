@@ -25,9 +25,13 @@ const HeaderBar = (props: HeaderBarProps) => {
     height: `calc(${props.height} - 16px)`,
   };
 
-  const headerBarLinks = props.children.filter(child => {
-    return child.type.name === 'HeaderBarLink';
-  });
+  const headerBarLinks = React.Children.toArray(props.children)
+    .filter(child => {
+      if (!React.isValidElement(child) || typeof child.type === 'string') {
+        return;
+      }
+      return child.type.name === 'HeaderBarLink';
+    });
 
   return (
     <div className={classes}
@@ -39,7 +43,7 @@ const HeaderBar = (props: HeaderBarProps) => {
       />
       {/* Header bar links */}
       {headerBarLinks.map((link, index: number) => (
-        React.cloneElement(link, {
+        React.cloneElement(link as React.ReactElement, {
           key: index,
           height: props.height,
         })

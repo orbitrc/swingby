@@ -7,7 +7,7 @@ import './Button.scss'
 interface ButtonProps {
   children: React.ReactNode;
   label: string;
-  onClick: Function;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button = (props: ButtonProps) => {

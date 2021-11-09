@@ -4,6 +4,7 @@
     "module": "esnext",
     "jsx": "react",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "components": ["./src/components/*"]
     }
