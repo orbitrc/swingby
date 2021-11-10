@@ -7,4 +7,5 @@ import HeaderBarLink from './src/components/HeaderBarLink';
 import Layout from './src/components/Layout';
 import Page from './src/components/Page';
 import PageContainer from './src/components/PageContainer';
-export { TestComponent, Button, HeaderBar, HeaderBarLink, Layout, Page, PageContainer, };
+import { useSwingby, } from './src/hooks';
+export { TestComponent, Button, HeaderBar, HeaderBarLink, Layout, Page, PageContainer, useSwingby, };

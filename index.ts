@@ -9,6 +9,10 @@ import Layout from './src/components/Layout'
 import Page from './src/components/Page'
 import PageContainer from './src/components/PageContainer'
 
+import {
+  useSwingby,
+} from './src/hooks'
+
 export {
   TestComponent,
   Button,
@@ -17,4 +21,6 @@ export {
   Layout,
   Page,
   PageContainer,
+
+  useSwingby,
 }

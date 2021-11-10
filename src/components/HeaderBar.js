@@ -1,9 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 import './HeaderBar.scss';
+import { useSwingby } from '../hooks/';
 const HeaderBar = (props) => {
+    const swingby = useSwingby();
+    console.log(swingby.screen.width);
     const classes = classNames({
         's-header-bar': true,
+        's-header-bar__mobile': swingby.screen.width < 400,
     });
     const styles = {
         height: props.height,

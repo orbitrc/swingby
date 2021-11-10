@@ -10,7 +10,7 @@ const Layout = (props: LayoutProps) => {
     <div className="s-layout">
       {props.children}
     </div>
-  )
+  );
 }
 
 Layout.defaultProps = {
