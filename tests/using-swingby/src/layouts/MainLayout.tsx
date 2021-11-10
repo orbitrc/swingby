@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, useLocation, RouteObject } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import {
   Layout,
@@ -8,13 +8,7 @@ import {
   PageContainer,
 } from 'swingby'
 
-interface MainLayoutProps {
-  children: RouteObject[];
-}
-
-const MainLayout = (props: MainLayoutProps) => {
-  const location = useLocation();
-
+const MainLayout = () => {
   return (
     <Layout className="main-layout">
       <HeaderBar
@@ -31,16 +25,10 @@ const MainLayout = (props: MainLayoutProps) => {
         <div>Hello!</div>
       </HeaderBar>
       <PageContainer>
-        <Routes>
-          <Route path={location.pathname} />
-        </Routes>
+        <Outlet />
       </PageContainer>
     </Layout>
   );
 }
-
-MainLayout.defaultProps = {
-  children: [],
-};
 
 export default MainLayout

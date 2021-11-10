@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css';
@@ -13,18 +13,30 @@ function App() {
       <Button />
       <div className="bg-primary">Hello!</div>
       <BrowserRouter>
-        <Routes>
-          {routes.map((route, index) => {
-            return (
-              <Route
-                path={route.path}
-                key={index}
-                element={route.element}
-                childRoute={route.children}
-              />
-            );
-          })}
-        </Routes>
+        <Suspense fallback={<div>Loading</div>} >
+          <Routes>
+            {routes.map((route, index) => {
+              return (
+                <Route
+                  path={route.path}
+                  key={index}
+                  element={route.element}
+                >
+                  {route.children.map((child, index) => {
+                    return (
+                      <Route
+                        path={child.path}
+                        key={index}
+                        index={child.index}
+                        element={child.element}
+                      />
+                    );
+                  })}
+                </Route>
+              );
+            })}
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </div>
   );
