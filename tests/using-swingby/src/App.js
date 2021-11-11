@@ -3,15 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css';
 
-import { Button } from 'swingby'
-
 import routes from './router/routes'
 
 function App() {
   return (
     <div className="App">
-      <Button />
-      <div className="bg-primary">Hello!</div>
       <BrowserRouter>
         <Suspense fallback={<div>Loading</div>} >
           <Routes>

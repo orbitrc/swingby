@@ -6,9 +6,44 @@ interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps) => {
+  //==============
+  // Children
+  //==============
+  const headerBar = React.Children.toArray(props.children).find(child => {
+    if (!React.isValidElement(child) || typeof child.type === 'string') {
+      return;
+    }
+
+    return child.type.name === 'HeaderBar';
+  });
+
+  const pageContainer = React.Children.toArray(props.children).find(child => {
+    if (!React.isValidElement(child) || typeof child.type === 'string') {
+      return;
+    }
+
+    return child.type.name === 'PageContainer';
+  });
+
+  //=====================
+  // Children Props
+  //=====================
+  const headerBarHeight = (headerBar)
+    ? (headerBar as React.ReactElement).props.height
+    : '0';
+
   return (
     <div className="s-layout">
-      {props.children}
+      {headerBar &&
+        headerBar
+      }
+      {pageContainer &&
+        React.cloneElement(pageContainer as React.ReactElement, {
+          style: {
+            paddingTop: headerBarHeight,
+          },
+        })
+      }
     </div>
   );
 }
