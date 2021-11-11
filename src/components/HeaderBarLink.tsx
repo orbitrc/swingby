@@ -5,6 +5,7 @@ import './HeaderBarLink.scss'
 interface HeaderBarLinkProps {
   className: string;
   height: string;
+  href: string;
   label: string;
 }
 
@@ -15,8 +16,8 @@ const HeaderBarLink = (props: HeaderBarLinkProps) => {
         height: props.height,
       }}
     >
-      <a className="link"
-        href=""
+      <a className="s-header-bar__link"
+        href={props.href}
       >
         {props.label}
       </a>
@@ -27,6 +28,7 @@ const HeaderBarLink = (props: HeaderBarLinkProps) => {
 HeaderBarLink.defaultProps = {
   className: '',
   height: '48px',
+  href: '',
   label: '',
 };
 

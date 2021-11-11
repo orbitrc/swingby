@@ -1,10 +1,11 @@
 .s-header-bar-link {
-  display: flex;
-  align-items: center;
 
-  .link {
+  .s-header-bar__link {
+    display: flex;
+    align-items: center;
     color: initial;
     text-decoration: none;
+    height: 100%;
 
     &:visited {
       color: initial;
