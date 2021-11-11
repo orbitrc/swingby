@@ -20,7 +20,7 @@ const HeaderBar = (props: HeaderBarProps) => {
 
   const classes = classNames({
     's-header-bar': true,
-    's-header-bar__mobile': swingby.screen.width < 400,
+    's-header-bar--mobile': swingby.screen.width < 400,
   });
 
   const styles = {
@@ -44,10 +44,13 @@ const HeaderBar = (props: HeaderBarProps) => {
     <div className={classes}
       style={styles}
     >
-      <img className="logo"
-        src={props.logo}
-        style={logoImgStyles}
-      />
+      <div className="s-header-bar__logo">
+        <img
+          src={props.logo}
+          style={logoImgStyles}
+        />
+        <div>{props.title}</div>
+      </div>
       {/* Header bar links */}
       {headerBarLinks.map((link, index: number) => (
         React.cloneElement(link as React.ReactElement, {

@@ -13,16 +13,20 @@ const MainLayout = () => {
     <Layout className="main-layout">
       <HeaderBar
         logo="https://raw.githubusercontent.com/orbitrc/orbit-logo/master/orbit-logo.svg"
+        title="Swingby Demo"
       >
         <HeaderBarLink
           className="text-weight-bold"
-          label="Lorem"
+          label="Home"
         />
         <HeaderBarLink
           className="text-weight-bold"
-          label="Ipsum"
+          label="Counter"
         />
-        <div>Hello!</div>
+        <HeaderBarLink
+          className="text-weight-bold"
+          label="Users"
+        />
       </HeaderBar>
       <PageContainer>
         <Outlet />

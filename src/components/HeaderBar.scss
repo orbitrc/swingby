@@ -6,4 +6,10 @@
   top: 0;
   width: 100%;
   background-color: var(--s-primary);
+
+  .s-header-bar__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
