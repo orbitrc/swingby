@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .bg-primary {
   background-color: var(--s-primary);
 }
@@ -10,12 +12,40 @@
 // Font Weights
 //=================
 
+.text-weight-thin {
+  font-weight: map-get($text-weights, "thin");
+}
+
+.text-weight-extra-light {
+  font-weight: map-get($text-weights, "extra-light");
+}
+
+.text-weight-light {
+  font-weight: map-get($text-weights, "light");
+}
+
 .text-weight-regular {
-  font-weight: 400;
+  font-weight: map-get($text-weights, "regular");
+}
+
+.text-weight-medium {
+  font-weight: map-get($text-weights, "medium");
+}
+
+.text-weight-semibold {
+  font-weight: map-get($text-weights, "semibold");
 }
 
 .text-weight-bold {
-  font-weight: 700;
+  font-weight: map-get($text-weights, "bold");
+}
+
+.text-weight-extra-bold {
+  font-weight: map-get($text-weights, "extra-bold");
+}
+
+.text-weight-black {
+  font-weight: map-get($text-weights, "black");
 }
 
 //=======================

@@ -49,7 +49,9 @@ const HeaderBar = (props: HeaderBarProps) => {
           src={props.logo}
           style={logoImgStyles}
         />
-        <div>{props.title}</div>
+        <div
+          className="text-weight-black"
+        >{props.title}</div>
       </div>
       {/* Header bar links */}
       {headerBarLinks.map((link, index: number) => (

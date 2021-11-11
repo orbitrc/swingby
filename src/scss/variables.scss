@@ -1,6 +1,18 @@
 $primary:   #f76060;
 $secondary: #1a4dac;
 
+$text-weights: (
+  "thin": 100,
+  "extra-light": 200,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extra-bold": 800,
+  "black": 900,
+);
+
 :root {
   --s-primary: #{$primary};
   --s-secondary: #{$secondary};
