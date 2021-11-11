@@ -5,7 +5,7 @@ import { Page } from 'swingby'
 const Index = () => {
   return (
     <Page>
-      <div>Hello, world!</div>
+      <div>Hello, Swingby!</div>
     </Page>
   );
 }

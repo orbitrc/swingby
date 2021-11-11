@@ -6,6 +6,7 @@ import { RouteObject } from 'react-router-dom'
 
 const MainLayout = React.lazy(() => import('../layouts/MainLayout'));
 const Index = React.lazy(() => import('../pages/Index'));
+const Counter = React.lazy(() => import('../pages/Counter'));
 
 const routes: RouteObject[] = [
   {
@@ -17,8 +18,8 @@ const routes: RouteObject[] = [
         element: <Index />,
       },
       {
-        path: 'test',
-        element: <Index />,
+        path: 'counter',
+        element: <Counter />,
       },
     ],
   },

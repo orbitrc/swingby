@@ -22,6 +22,7 @@ const MainLayout = () => {
         <HeaderBarLink
           className="text-weight-bold"
           label="Counter"
+          href="/counter"
         />
         <HeaderBarLink
           className="text-weight-bold"
