@@ -8,7 +8,9 @@ const CounterDemo = () => {
   return (
     <div className="counter-demo">
       <div>You have clicked</div>
-      <div>{count}</div>
+      <div
+        className="text-h1"
+      >{count}</div>
       <div>times.</div>
       <Button
         label="+"
