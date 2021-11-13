@@ -7,7 +7,7 @@ interface PageProps {
 
 const Page = (props: PageProps) => {
   return (
-    <div className="s-page">
+    <div className={`s-page ${props.className}`}>
       {props.children}
     </div>
   );
