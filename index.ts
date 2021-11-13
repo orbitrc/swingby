@@ -1,5 +1,7 @@
 import './src/scss/global.scss'
 
+import SwingbyApp from './src/components/SwingbyApp'
+
 import TestComponent from './src/components/TestComponent'
 import Button from './src/components/Button'
 import HeaderBar from './src/components/HeaderBar'
@@ -13,6 +15,8 @@ import {
 } from './src/hooks'
 
 export {
+  SwingbyApp,
+
   TestComponent,
   Button,
   HeaderBar,

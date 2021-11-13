@@ -1,22 +1,27 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { ReactElement, Suspense } from 'react'
+import {
+  RouteObject,
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom'
 
-import './App.css';
+interface SwingbyAppProps {
+  routes: RouteObject[];
+}
 
-import routes from './router/routes'
-
-function App() {
+const SwingbyApp = (props: SwingbyAppProps) => {
   return (
-    <div className="App">
+    <div className="s-app">
       <BrowserRouter>
         <Suspense fallback={<div>Loading</div>} >
           <Routes>
-            {routes.map((route, index) => {
+            {props.routes.map((route, index) => {
               return (
                 <Route
                   path={route.path}
                   key={index}
-                  element={route.element}
+                  element={route.element as ReactElement}
                 >
                   {route.children.map((child, index) => {
                     return (
@@ -24,12 +29,12 @@ function App() {
                         path={child.path}
                         key={index}
                         index={child.index}
-                        element={child.element}
+                        element={child.element as ReactElement}
                       />
                     );
                   })}
                 </Route>
-              );
+              )
             })}
           </Routes>
         </Suspense>
@@ -38,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default SwingbyApp

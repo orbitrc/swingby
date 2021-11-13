@@ -2,4 +2,5 @@ dist/
 package-lock.json
 node_modules/
 
+/index.js
 src/components/*.js
