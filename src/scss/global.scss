@@ -68,3 +68,78 @@
 .s-pa-md {
   padding: 8px 8px;
 }
+
+//=================
+// Layout
+//=================
+
+.row, .column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  .col-1 {
+    height: auto;
+    width: 8.3333%;
+  }
+
+  .col-2 {
+    height: auto;
+    width: 16.6667%;
+  }
+
+  .col-3 {
+    height: auto;
+    width: 25%;
+  }
+
+  .col-4 {
+    height: auto;
+    width: 33.3333%;
+  }
+
+  .col-5 {
+    height: auto;
+    width: 41.6667%;
+  }
+
+  .col-6 {
+    height: auto;
+    width: 50%;
+  }
+
+  .col-7 {
+    height: auto;
+    width: 58.3333%;
+  }
+
+  .col-8 {
+    height: auto;
+    width: 66.6667%;
+  }
+
+  .col-9 {
+    height: auto;
+    width: 75%;
+  }
+
+  .col-10 {
+    height: auto;
+    width: 83.3333%;
+  }
+
+  .col-11 {
+    height: auto;
+    width: 91.6667%;
+  }
+
+  .col-12 {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.column {
+  flex-direction: column;
+}
