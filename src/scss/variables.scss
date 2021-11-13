@@ -13,6 +13,52 @@ $text-weights: (
   "black": 900,
 );
 
+$h1: (
+  size: 6rem,
+  line-height: 6rem,
+  letter-spacing: -.01562em,
+  weight: map-get($text-weights, "light"),
+) !default;
+
+$h2: (
+  size: 3.75rem,
+  line-height: 3.75rem,
+  letter-spacing: -.00833em,
+  weight: map-get($text-weights, "light"),
+) !default;
+
+$h3: (
+  size: 3rem,
+  line-height: 3.125rem,
+  letter-spacing: normal,
+  weight: map-get($text-weights, "regular"),
+) !default;
+
+$h4: (
+  size: 2.125rem,
+  line-height: 2.5rem,
+  letter-spacing: .00735em,
+  weight: map-get($text-weights, "regular"),
+) !default;
+
+$h5: (
+  size: 1.5rem,
+  line-height: 2rem,
+  letter-spacing: normal,
+  weight: map-get($text-weights, "regular"),
+) !default;
+
+$h6: (
+  size: 1.25rem,
+  line-height: 2rem,
+  letter-spacing: .0125em,
+  weight: map-get($text-weights, "medium"),
+) !default;
+
+$text-sizes: (
+  $h1, $h2, $h3, $h4, $h5, $h6
+);
+
 :root {
   --s-primary: #{$primary};
   --s-secondary: #{$secondary};

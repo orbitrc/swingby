@@ -9,6 +9,19 @@
 }
 
 //=================
+// Font sizes
+//=================
+
+@each $var, $val in $text-sizes {
+  .text-#{$val} {
+    font-size: map-get($var, "size");
+    font-weight: map-get($var, "weight");
+    line-height: map-get($var, "line-height");
+    letter-spacing: map-get($var, "letter-spacing");
+  }
+}
+
+//=================
 // Font Weights
 //=================
 
