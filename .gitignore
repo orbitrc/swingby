@@ -4,3 +4,4 @@ node_modules/
 
 /index.js
 src/components/*.js
+src/hooks/*.js

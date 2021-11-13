@@ -10,17 +10,31 @@ interface HeaderBarProps {
   children: React.ReactNode;
   height: string;
   logo: string;
+  mobileSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   title: string;
 }
 
 const HeaderBar = (props: HeaderBarProps) => {
   const swingby = useSwingby();
 
-  console.log(swingby.screen.width);
-
   const classes = classNames({
     's-header-bar': true,
-    's-header-bar--mobile': swingby.screen.width < 400,
+    's-header-bar--mobile': (() => {
+      switch (props.mobileSize) {
+        case 'xs':
+          return swingby.screen.width < swingby.screen.sizes['sm'];
+        case 'sm':
+          return swingby.screen.width < swingby.screen.sizes['md'];
+        case 'md':
+          return swingby.screen.width < swingby.screen.sizes['lg'];
+        case 'lg':
+          return swingby.screen.width < swingby.screen.sizes['xl'];
+        case 'xl':
+          return swingby.screen.width >= swingby.screen.sizes['xl'];
+        default:
+          return false;
+      }
+    })(),
   });
 
   const styles = {
@@ -68,6 +82,7 @@ const HeaderBar = (props: HeaderBarProps) => {
 HeaderBar.defaultProps = {
   height: '64px',
   logo: '',
+  mobileSize: 'sm',
   title: '',
 };
 
