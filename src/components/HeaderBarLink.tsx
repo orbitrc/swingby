@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './HeaderBarLink.scss'
 
 interface HeaderBarLinkProps {
   className: string;
   height: string;
-  href: string;
+  to: string;
   label: string;
 }
 
@@ -16,11 +17,11 @@ const HeaderBarLink = (props: HeaderBarLinkProps) => {
         height: props.height,
       }}
     >
-      <a className="s-header-bar__link"
-        href={props.href}
+      <Link className="s-header-bar__link"
+        to={props.to}
       >
         {props.label}
-      </a>
+      </Link>
     </div>
   );
 }
@@ -28,7 +29,7 @@ const HeaderBarLink = (props: HeaderBarLinkProps) => {
 HeaderBarLink.defaultProps = {
   className: '',
   height: '48px',
-  href: '',
+  to: '/',
   label: '',
 };
 
