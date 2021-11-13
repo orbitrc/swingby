@@ -13,6 +13,7 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
   const classes = classNames({
     's-button': true,
+    's-button--rectangle': true,
     's-pa-md': true,
   });
 
