@@ -1,11 +1,19 @@
 import React from 'react'
 
+import { useSwingby } from '../hooks'
+
 interface LayoutProps {
   className: string;
   children: React.ReactNode;
+  style: React.CSSProperties;
 }
 
 const Layout = (props: LayoutProps) => {
+  //==============
+  // Hooks
+  //==============
+  const swingby = useSwingby();
+
   //==============
   // Children
   //==============
@@ -32,8 +40,17 @@ const Layout = (props: LayoutProps) => {
     ? (headerBar as React.ReactElement).props.height
     : '0';
 
+  //=================
+  // Style
+  //=================
+  const styles = Object.assign({
+    minHeight: `${swingby.screen.height}px`,
+  }, props.style);
+
   return (
-    <div className="s-layout">
+    <div className="s-layout"
+      style={styles}
+    >
       {headerBar &&
         headerBar
       }
@@ -51,6 +68,7 @@ const Layout = (props: LayoutProps) => {
 Layout.defaultProps = {
   className: '',
   children: [],
+  style: {},
 };
 
 export default Layout
