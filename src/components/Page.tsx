@@ -9,8 +9,14 @@ interface PageProps {
 }
 
 const Page = (props: PageProps) => {
+  //============
+  // Hooks
+  //============
   const swingby = useSwingby();
 
+  //===============
+  // Elements
+  //===============
   const headerBars = document.getElementsByClassName('s-header-bar');
   const headerBar = headerBars.length > 0 ? headerBars[0] as HTMLElement : null;
 
