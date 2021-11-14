@@ -27,6 +27,7 @@ const MainLayout = () => {
         <HeaderBarLink
           className="text-weight-bold"
           label="Users"
+          to="/users"
         />
       </HeaderBar>
       <PageContainer>
