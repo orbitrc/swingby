@@ -6,6 +6,27 @@ import {
   Route,
 } from 'react-router-dom'
 
+function mapRoutes(routes: RouteObject[]): JSX.Element[] {
+  if (routes === undefined) {
+    return [];
+  }
+
+  const map = routes.map((route, index) => {
+    return (
+      <Route
+        path={route.path}
+        key={index}
+        index={route.index}
+        element={route.element as ReactElement}
+      >
+        {mapRoutes(route.children)}
+      </Route>
+    );
+  });
+
+  return map;
+}
+
 interface SwingbyAppProps {
   routes: RouteObject[];
 }
@@ -16,26 +37,7 @@ const SwingbyApp = (props: SwingbyAppProps) => {
       <BrowserRouter>
         <Suspense fallback={<div>Loading</div>} >
           <Routes>
-            {props.routes.map((route, index) => {
-              return (
-                <Route
-                  path={route.path}
-                  key={index}
-                  element={route.element as ReactElement}
-                >
-                  {route.children.map((child, index) => {
-                    return (
-                      <Route
-                        path={child.path}
-                        key={index}
-                        index={child.index}
-                        element={child.element as ReactElement}
-                      />
-                    );
-                  })}
-                </Route>
-              )
-            })}
+            {mapRoutes(props.routes)}
           </Routes>
         </Suspense>
       </BrowserRouter>
