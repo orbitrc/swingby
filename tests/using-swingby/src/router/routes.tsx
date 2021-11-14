@@ -24,12 +24,10 @@ const routes: RouteObject[] = [
       {
         path: 'users',
         element: <Users />,
-        children: [
-          {
-            path: ':id',
-            element: <UserDetail />,
-          },
-        ],
+      },
+      {
+        path: 'users/:id',
+        element: <UserDetail />,
       },
     ],
   },

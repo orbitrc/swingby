@@ -1,10 +1,17 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+
+import { Page } from 'swingby'
 
 const UserDetail = () => {
+  const { id } = useParams();
+
   return (
-    <div>
-      User 1
-    </div>
+    <Page>
+      <div>
+        User {id}
+      </div>
+    </Page>
   );
 }
 
