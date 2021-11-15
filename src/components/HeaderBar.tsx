@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import classNames from 'classnames'
 
 import './HeaderBar.scss'
 
+import { SColor } from '../types'
 import { useSwingby } from '../hooks/'
 
 interface HeaderBarProps {
   children: React.ReactNode;
+  color: SColor;
   height: string;
   logo: string;
   mobileSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -21,6 +23,24 @@ const HeaderBar = (props: HeaderBarProps) => {
   const swingby = useSwingby();
 
   const [showLinks, setShowLinks] = useState(false);
+
+  useEffect(() => {
+    const linksElements = document.getElementsByClassName(
+      's-header-bar__links--mobile'
+    );
+    const linksElement = linksElements.length > 0 ? linksElements[0] : null;
+    if (linksElement) {
+      const linkElements = linksElement.getElementsByClassName(
+        's-header-bar-link'
+      );
+      for (let i = 0; i < linkElements.length; ++i) {
+        const el = linkElements[i];
+        setTimeout(() => {
+          el.classList.add('s-header-bar-link--show');
+        }, i * 500);
+      }
+    }
+  }, []);
 
   function isMobile(): boolean {
     switch (props.mobileSize) {
@@ -45,6 +65,7 @@ const HeaderBar = (props: HeaderBarProps) => {
   const classes = classNames({
     's-header-bar': true,
     's-header-bar--mobile': isMobile(),
+    [`bg-${props.color}`]: true,
   });
 
   const menuButtonClasses = classNames({
@@ -93,6 +114,7 @@ const HeaderBar = (props: HeaderBarProps) => {
     <div className={classes}
       style={styles}
     >
+      {/* Mobile Menu Button */}
       {isMobile() &&
         <div
           className={menuButtonClasses}
@@ -129,18 +151,37 @@ const HeaderBar = (props: HeaderBarProps) => {
         >{props.title}</div>
       </div>
       {/* Header bar links */}
-      {headerBarLinks.map((link, index: number) => (
-        React.cloneElement(link as React.ReactElement, {
-          key: index,
-          height: props.height,
-        })
-      ))
+      {!isMobile()
+        ? headerBarLinks.map((link, index: number) => (
+            React.cloneElement(link as React.ReactElement, {
+              key: index,
+              height: props.height,
+            })
+          ))
+        : <div
+            className={classNames({
+              's-header-bar__links--mobile': true,
+              [`bg-${props.color}`]: true,
+            })}
+            style={{
+              display: showLinks ? 'initial' : 'none',
+              top: props.height,
+            }}
+          >
+            {headerBarLinks.map((link, index: number) => (
+              React.cloneElement(link as React.ReactElement, {
+                key: index,
+                height: props.height,
+              })
+            ))}
+          </div>
       }
     </div>
   );
 }
 
 HeaderBar.defaultProps = {
+  color: 'primary',
   height: '64px',
   logo: '',
   mobileSize: 'sm',
