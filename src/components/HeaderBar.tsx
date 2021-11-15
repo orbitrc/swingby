@@ -64,10 +64,19 @@ const HeaderBar = (props: HeaderBarProps) => {
     height: `calc(${props.height} - 16px)`,
   };
 
+  const menuButtonWidthNumber = parseFloat(props.height) - 16;
+
   const menuButtonStyles = {
-    width: `calc(${props.height} - 16px)`,
-    height: `calc(${props.height} - 16px)`,
+    width: `${menuButtonWidthNumber}px`,
+    height: `${menuButtonWidthNumber}px`,
   };
+
+  const bunWidthNumber = parseFloat(props.height) / 2;
+  const bunLeftNumber = (menuButtonWidthNumber - bunWidthNumber) / 2;
+
+  const bunWidth = `${bunWidthNumber}px`;
+  const bunLeft = `${bunLeftNumber}px`;
+  const bunOffset = `${bunWidthNumber / 2}px`;
 
   //===============
   // Children
@@ -92,8 +101,22 @@ const HeaderBar = (props: HeaderBarProps) => {
             setShowLinks(!showLinks);
           }}
         >
-          <div className="s-header-bar__menu-button__bun-top"></div>
-          <div className="s-header-bar__menu-button__bun-bottom"></div>
+          <div
+            className="s-header-bar__menu-button__bun-top"
+            style={{
+              width: bunWidth,
+              left: bunLeft,
+              top: bunOffset,
+            }}
+          ></div>
+          <div
+            className="s-header-bar__menu-button__bun-bottom"
+            style={{
+              width: bunWidth,
+              left: bunLeft,
+              bottom: bunOffset,
+            }}
+          ></div>
         </div>
       }
       <div className="s-header-bar__logo">
