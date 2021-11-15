@@ -9,6 +9,7 @@ import { useSwingby } from '../hooks/'
 
 interface HeaderBarProps {
   children: React.ReactNode;
+  className: string;
   color: SColor;
   height: string;
   logo: string;
@@ -66,7 +67,7 @@ const HeaderBar = (props: HeaderBarProps) => {
     's-header-bar': true,
     's-header-bar--mobile': isMobile(),
     [`bg-${props.color}`]: true,
-  });
+  }, props.className);
 
   const menuButtonClasses = classNames({
     's-header-bar__menu-button': true,
@@ -181,6 +182,7 @@ const HeaderBar = (props: HeaderBarProps) => {
 }
 
 HeaderBar.defaultProps = {
+  className: '',
   color: 'primary',
   height: '64px',
   logo: '',

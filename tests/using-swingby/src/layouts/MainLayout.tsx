@@ -12,6 +12,7 @@ const MainLayout = () => {
   return (
     <Layout className="main-layout">
       <HeaderBar
+        className="text-secondary"
         logo="https://raw.githubusercontent.com/orbitrc/orbit-logo/master/orbit-logo.svg"
         title="Swingby Demo"
       >

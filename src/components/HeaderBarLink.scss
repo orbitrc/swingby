@@ -3,12 +3,12 @@
   .s-header-bar__link {
     display: flex;
     align-items: center;
-    color: initial;
+    color: inherit;
     text-decoration: none;
     height: 100%;
 
     &:visited {
-      color: initial;
+      color: inherit;
       text-decoration: none;
     }
   }
