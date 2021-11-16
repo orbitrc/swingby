@@ -7,8 +7,10 @@ import Button from './src/components/Button'
 import HeaderBar from './src/components/HeaderBar'
 import HeaderBarLink from './src/components/HeaderBarLink'
 import Layout from './src/components/Layout'
+import List from './src/components/List'
 import Page from './src/components/Page'
 import PageContainer from './src/components/PageContainer'
+import Section from './src/components/Section'
 
 import {
   useSwingby,
@@ -22,8 +24,10 @@ export {
   HeaderBar,
   HeaderBarLink,
   Layout,
+  List,
   Page,
   PageContainer,
+  Section,
 
   useSwingby,
 }
