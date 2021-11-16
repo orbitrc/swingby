@@ -4,13 +4,13 @@ import classNames from 'classnames'
 
 import './HeaderBar.scss'
 
-import { SColor } from '../types'
+import { SColor, isSColor } from '../types'
 import { useSwingby } from '../hooks/'
 
 interface HeaderBarProps {
   children: React.ReactNode;
   className: string;
-  color: SColor;
+  color: SColor | string;
   height: string;
   logo: string;
   mobileSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -63,11 +63,12 @@ const HeaderBar = (props: HeaderBarProps) => {
   //============
   // Class
   //============
+  const bgClass = isSColor(props.color) ? `bg-${props.color}` : '';
+
   const classes = classNames({
     's-header-bar': true,
     's-header-bar--mobile': isMobile(),
-    [`bg-${props.color}`]: true,
-  }, props.className);
+  }, bgClass, props.className);
 
   const menuButtonClasses = classNames({
     's-header-bar__menu-button': true,
@@ -77,9 +78,13 @@ const HeaderBar = (props: HeaderBarProps) => {
   //============
   // Style
   //============
-  const styles = {
+  const bgStyle = !isSColor(props.color)
+    ? { backgroundColor: props.color }
+    : {};
+
+  const styles = Object.assign({
     height: props.height,
-  };
+  }, bgStyle);
 
   const logoImgStyles = {
     width: `calc(${props.height} - 16px)`,
@@ -162,12 +167,11 @@ const HeaderBar = (props: HeaderBarProps) => {
         : <div
             className={classNames({
               's-header-bar__links--mobile': true,
-              [`bg-${props.color}`]: true,
-            })}
-            style={{
+            }, bgClass)}
+            style={Object.assign({
               display: showLinks ? 'initial' : 'none',
               top: props.height,
-            }}
+            }, bgStyle)}
           >
             {headerBarLinks.map((link, index: number) => (
               React.cloneElement(link as React.ReactElement, {
