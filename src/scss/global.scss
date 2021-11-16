@@ -4,6 +4,12 @@
 // Colors
 //================
 
+// Background Colors
+
+.bg-white {
+  background-color: var(--s-white);
+}
+
 .bg-primary {
   background-color: var(--s-primary);
 }
@@ -12,12 +18,26 @@
   background-color: var(--s-secondary);
 }
 
+.bg-accent {
+  background-color: var(--s-accent);
+}
+
+// Text Colors
+
+.text-white {
+  color: var(--s-white);
+}
+
 .text-primary {
   color: var(--s-primary);
 }
 
 .text-secondary {
   color: var(--s-secondary);
+}
+
+.text-accent {
+  color: var(--s-accent);
 }
 
 //=================

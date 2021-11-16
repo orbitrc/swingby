@@ -1,5 +1,22 @@
-$primary:   #f76060;
-$secondary: #1a4dac;
+$black:     #000000;
+$white:     #ffffff;
+$red:       #FF3B30;
+$orange:    #FF9500;
+$yellow:    #FFCC00;
+$green:     #34C759;
+$mint:      #00C7BE;
+$teal:      #30B0C7;
+$cyan:      #32ADE6;
+$blue:      #007AFF;
+$indigo:    #5856D6;
+$purple:    #AF52DE;
+$pink:      #FF2D55;
+$brown:     #A2845E;
+$grey:      #8E8E93;
+$gray:      $grey;
+$primary:   $black;
+$secondary: $grey;
+$accent:    $blue;
 
 $text-weights: (
   "thin": 100,
@@ -65,8 +82,25 @@ $text-sizes: (
 );
 
 :root {
-  --s-primary: #{$primary};
-  --s-secondary: #{$secondary};
+  --s-black:      #{$black};
+  --s-white:      #{$white};
+  --s-red:        #{$red};
+  --s-orange:     #{$orange};
+  --s-yellow:     #{$yellow};
+  --s-green:      #{$green};
+  --s-mint:       #{$mint};
+  --s-teal:       #{$teal};
+  --s-cyan:       #{$cyan};
+  --s-blue:       #{$blue};
+  --s-indigo:     #{$indigo};
+  --s-purple:     #{$purple};
+  --s-pink:       #{$pink};
+  --s-brown:      #{$brown};
+  --s-grey:       #{$grey};
+  --s-gray:       #{$gray};
+  --s-primary:    #{$primary};
+  --s-secondary:  #{$secondary};
+  --s-accent:     #{$accent};
 
   --breakpoint-sm-min: 0;
   --breakpoint-sm-max: 599px;

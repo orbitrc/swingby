@@ -183,7 +183,7 @@ const HeaderBar = (props: HeaderBarProps) => {
 
 HeaderBar.defaultProps = {
   className: '',
-  color: 'primary',
+  color: 'accent',
   height: '64px',
   logo: '',
   mobileSize: 'sm',
