@@ -14,7 +14,7 @@ const Users = () => {
             }
           >
             <div>Jane Doe</div>
-            <div>Jone Smith</div>
+            <div>John Smith</div>
             <button>Click!</button>
           </Section>
         </List>
