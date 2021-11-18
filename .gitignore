@@ -6,3 +6,5 @@ node_modules/
 src/components/*.js
 src/hooks/*.js
 src/types/*.js
+
+cli/swingby-cli-*.tgz

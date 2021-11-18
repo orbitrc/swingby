@@ -156,6 +156,7 @@ checkBrowsers(paths.appPath, isInteractive)
       }
 
       console.log(chalk.cyan('Starting the development server...\n'));
+      console.log(process.env.SWINGBY_DEV_SERVER_OPEN);
       openBrowser(urls.localUrlForBrowser);
     });
 

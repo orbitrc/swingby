@@ -1,4 +1,4 @@
-const { configure } = require('swingby');
+const { configure } = require('swingby/configure');
 
 module.exports = configure(function() {
   return {
