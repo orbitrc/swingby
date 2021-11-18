@@ -18,6 +18,13 @@ process.on('unhandledRejection', err => {
 const spawn = require('react-dev-utils/crossSpawn');
 const args = process.argv.slice(2);
 
+// Version info.
+if (args.includes('--version')) {
+  const packageJson = require('../package.json');
+  console.log(`Swingby CLI v${packageJson.version}`);
+  return;
+}
+
 const scriptIndex = args.findIndex(x =>
   x === 'build' || x === 'dev' || x === 'new' || x === 'test'
 );
