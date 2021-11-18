@@ -48,3 +48,5 @@ export function isSColor(color: string): boolean {
 
   return false;
 }
+
+export * from './configure'

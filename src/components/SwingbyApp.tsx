@@ -6,6 +6,8 @@ import {
   Route,
 } from 'react-router-dom'
 
+console.log(process.env.SWINGBY_I18N);
+
 function mapRoutes(routes: RouteObject[]): JSX.Element[] {
   if (routes === undefined) {
     return [];
