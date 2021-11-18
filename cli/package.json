@@ -27,6 +27,9 @@
     "swingby": "./bin/swingby.js"
   },
   "types": "./lib/react-app.d.ts",
+  "scripts": {
+    "dev-install": "npm pack && npm install -g swingby-cli-0.0.1.tgz"
+  },
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
