@@ -110,7 +110,10 @@ function getClientEnvironment(publicUrl) {
         // which is why it's disabled by default.
         // It is defined here so it is available in the webpackHotDevClient.
         FAST_REFRESH: process.env.FAST_REFRESH !== 'false',
+        // Compile time Swingby environments.
         SWINGBY_DEV_SERVER_OPEN: config.devServer.open,
+        // Runtime Swingby environments.
+        SWINGBY_I18N: config.i18n,
       }
     );
   // Stringify all values so we can feed into webpack DefinePlugin

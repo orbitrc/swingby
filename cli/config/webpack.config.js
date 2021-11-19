@@ -645,6 +645,10 @@ module.exports = function (webpackEnv) {
       // during a production build.
       // Otherwise React will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
+      // Set Swingby runtime environment variables.
+      new webpack.EnvironmentPlugin({
+        SWINGBY_I18N: env.raw.SWINGBY_I18N,
+      }),
       // This is necessary to emit hot updates (CSS and Fast Refresh):
       isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
       // Experimental hot reloading for React .
