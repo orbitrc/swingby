@@ -156,7 +156,7 @@ checkBrowsers(paths.appPath, isInteractive)
       }
 
       console.log(chalk.cyan('Starting the development server...\n'));
-      if (env.raw.SWINGBY_DEV_SERVER_OPEN === true) {
+      if (process.env.SWINGBY_DEV_SERVER_OPEN === true) {
         openBrowser(urls.localUrlForBrowser);
       }
     });

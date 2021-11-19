@@ -7,7 +7,21 @@ import {
 } from 'react-router-dom'
 
 console.log(process.env.SWINGBY_I18N);
+console.log(process.env);
 
+function i18nRoutes(routes: RouteObject[]): RouteObject[] {
+  const newRoutes = Object.assign(routes, {
+    path: '/:locale',
+  });
+
+  return newRoutes;
+}
+
+/**
+ * Maps each routes and return the `Route`s.
+ * @param routes An array of RouteObject.
+ * @returns Array of JSX.Element that mapped with Route.
+ */
 function mapRoutes(routes: RouteObject[]): JSX.Element[] {
   if (routes === undefined) {
     return [];
@@ -34,6 +48,7 @@ interface SwingbyAppProps {
 }
 
 const SwingbyApp = (props: SwingbyAppProps) => {
+  console.log(i18nRoutes(props.routes));
   return (
     <div className="s-app">
       <BrowserRouter>
