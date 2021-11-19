@@ -64,6 +64,17 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
   .map(folder => path.resolve(appDirectory, folder))
   .join(path.delimiter);
 
+// Read swingby.config.js file and merge with default config.
+const swingbyConfigJsPath = `${process.cwd()}/swingby.config.js`;
+if (!fs.existsSync(swingbyConfigJsPath)) {
+  console.log('swingby.config.js file not found!');
+  return 1;
+}
+const swingbyConfigJs = require(swingbyConfigJsPath)();
+const defaultConfig = require('./defaultConfig');
+const config = Object.assign(defaultConfig, swingbyConfigJs);
+console.log(config);
+
 // Grab NODE_ENV and REACT_APP_* environment variables and prepare them to be
 // injected into the application via DefinePlugin in webpack configuration.
 const REACT_APP = /^REACT_APP_/i;
@@ -98,7 +109,7 @@ function getClientEnvironment(publicUrl) {
         // which is why it's disabled by default.
         // It is defined here so it is available in the webpackHotDevClient.
         FAST_REFRESH: process.env.FAST_REFRESH !== 'false',
-        SWINGBY_DEV_SERVER_OPEN: false,
+        SWINGBY_DEV_SERVER_OPEN: config.devServer.open,
       }
     );
   // Stringify all values so we can feed into webpack DefinePlugin
