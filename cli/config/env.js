@@ -1,6 +1,7 @@
 // @remove-on-eject-begin
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright (c) 2015-2021, Facebook, Inc.
+ * Copyright (c) 2021, Orbit Research Centre
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
