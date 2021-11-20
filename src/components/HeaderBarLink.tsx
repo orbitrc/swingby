@@ -8,6 +8,7 @@ interface HeaderBarLinkProps {
   height: string;
   to: string;
   label: string;
+  __TYPE: string;
 }
 
 const HeaderBarLink = (props: HeaderBarLinkProps) => {
@@ -31,6 +32,7 @@ HeaderBarLink.defaultProps = {
   height: '48px',
   to: '/',
   label: '',
+  __TYPE: 'HeaderBarLink',
 };
 
 export default HeaderBarLink

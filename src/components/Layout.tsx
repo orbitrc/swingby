@@ -22,7 +22,7 @@ const Layout = (props: LayoutProps) => {
       return;
     }
 
-    return child.type.name === 'HeaderBar';
+    return child.props.__TYPE === 'HeaderBar';
   });
 
   const pageContainer = React.Children.toArray(props.children).find(child => {
@@ -30,7 +30,7 @@ const Layout = (props: LayoutProps) => {
       return;
     }
 
-    return child.type.name === 'PageContainer';
+    return child.props.__TYPE === 'PageContainer';
   });
 
   //=====================

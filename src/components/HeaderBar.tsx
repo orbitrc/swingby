@@ -15,6 +15,7 @@ interface HeaderBarProps {
   logo: string;
   mobileSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   title: string;
+  __TYPE: string;
 }
 
 const HeaderBar = (props: HeaderBarProps) => {
@@ -113,7 +114,7 @@ const HeaderBar = (props: HeaderBarProps) => {
       if (!React.isValidElement(child) || typeof child.type === 'string') {
         return;
       }
-      return child.type.name === 'HeaderBarLink';
+      return child.props.__TYPE === 'HeaderBarLink';
     });
 
   return (
@@ -192,6 +193,7 @@ HeaderBar.defaultProps = {
   logo: '',
   mobileSize: 'sm',
   title: '',
+  __TYPE: 'HeaderBar',
 };
 
 export default HeaderBar

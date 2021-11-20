@@ -4,6 +4,7 @@ interface PageContainerProps {
   className: string;
   children: React.ReactNode;
   style: React.CSSProperties;
+  __TYPE: string;
 }
 
 const PageContainer = (props: PageContainerProps) => {
@@ -20,6 +21,7 @@ PageContainer.defaultProps = {
   className: '',
   children: [],
   style: {},
+  __TYPE: 'PageContainer',
 };
 
 export default PageContainer
