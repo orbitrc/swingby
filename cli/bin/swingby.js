@@ -26,12 +26,12 @@ if (args.includes('--version')) {
 }
 
 const scriptIndex = args.findIndex(x =>
-  x === 'build' || x === 'dev' || x === 'new' || x === 'test'
+  x === 'build' || x === 'dev' || x === 'new' || x === 'serve' || x === 'test'
 );
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
 
-if (['build', 'dev', 'new', 'test'].includes(script)) {
+if (['build', 'dev', 'new', 'serve', 'test'].includes(script)) {
   const result = spawn.sync(
     process.execPath,
     nodeArgs
