@@ -53,6 +53,7 @@
     "rollup-plugin-postcss": "^4.0.0"
   },
   "dependencies": {
+    "@testing-library/react": "^11.2.7",
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
