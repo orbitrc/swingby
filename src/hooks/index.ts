@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const breakpoints = {
   xs: 0,
@@ -32,7 +33,38 @@ interface SScreen {
   sizes: Object;
 }
 
-function useSwingby() {
+interface SI18n {
+  locale: string;
+  systemLocale: string;
+}
+
+function getCurrentLocale(pathname: string): string {
+  const locales = process.env.SWINGBY_I18N_LOCALES.split(':');
+
+  // Returns default locale if pathname is `/`.
+  if (pathname === '/') {
+    return process.env.SWINGBY_I18N_DEFAULT_LOCALE;
+  }
+  // If first path not in locales, returns default locale.
+  const first = pathname.split('/')[1];
+  if (!locales.includes(first)) {
+    return process.env.SWINGBY_I18N_DEFAULT_LOCALE;
+  }
+  // Returns matched locale.
+  if (locales.includes(first)) {
+    return first;
+  }
+}
+
+interface SwingbyObject {
+  screen: SScreen;
+  i18n: SI18n;
+}
+
+function useSwingby(): SwingbyObject {
+  //=============
+  // Screen
+  //=============
   const [screen, setScreen] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -59,8 +91,18 @@ function useSwingby() {
     }
   }, []);
 
+  //=============
+  // I18n
+  //=============
+  const location = useLocation();
+  const i18n: SI18n = {
+    locale: getCurrentLocale(location.pathname),
+    systemLocale: navigator.language,
+  };
+
   return {
     screen,
+    i18n,
   };
 }
 

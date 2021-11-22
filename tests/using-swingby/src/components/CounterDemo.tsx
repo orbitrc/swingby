@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
 
-import { Button } from 'swingby'
+import { Button, useSwingby } from 'swingby'
+
+import messages from '../i18n/messages'
 
 const CounterDemo = () => {
+  const swingby = useSwingby();
+  console.log(swingby.i18n.locale);
+  const locale = swingby.i18n.locale;
+
   const [count, setCount] = useState(0);
 
   return (
     <div className="counter-demo column items-center">
-      <div>You have clicked</div>
+      <div>{messages['counter-prepend'][locale]}</div>
       <div
         className="text-h1"
-      >{count}</div>
-      <div>times.</div>
+      >{count}{messages['counter-unit'][locale]}</div>
+      <div>{messages['counter-append'][locale]}</div>
       <Button
         label="＋"
         onClick={() => {
