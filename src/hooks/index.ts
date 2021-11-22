@@ -39,6 +39,11 @@ interface SI18n {
 }
 
 function getCurrentLocale(pathname: string): string {
+  // Returns browser's locale if i18n not set.
+  if (!process.env.SWINGBY_I18N) {
+    return navigator.language;
+  }
+
   const locales = process.env.SWINGBY_I18N_LOCALES.split(':');
 
   // Returns default locale if pathname is `/`.
