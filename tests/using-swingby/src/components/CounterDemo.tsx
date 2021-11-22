@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 import { Button, useSwingby } from 'swingby'
 
-import messages from '../i18n/messages'
+import messages, { LocaleKey } from '../i18n/messages'
 
 const CounterDemo = () => {
   const swingby = useSwingby();
   console.log(swingby.i18n.locale);
-  const locale = swingby.i18n.locale;
+  const locale = swingby.i18n.locale as LocaleKey;
 
   const [count, setCount] = useState(0);
 
