@@ -3,7 +3,16 @@ declare module "swingby/configure" {
     /**
      * Enable Swingby i18n mode.
      */
-    i18n?: boolean;
+    i18n?: {
+      /**
+       * List of locales.
+       */
+      locales: string[];
+      /**
+       * Default locale. This should be a one of `locales`.
+       */
+      defaultLocale: string;
+    };
 
     devServer?: {
       port?: number;

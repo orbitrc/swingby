@@ -10,8 +10,22 @@ console.log(process.env.SWINGBY_I18N);
 console.log(process.env);
 
 function i18nRoutes(routes: RouteObject[]): RouteObject[] {
-  const newRoutes = Object.assign(routes, {
-    path: '/:locale',
+  let newRoutes = [...routes];
+  const locales = process.env.SWINGBY_I18N_LOCALES.split(':').reverse();
+  locales.forEach(locale => {
+    // Copy base routes.
+    const baseRoutes = [];
+    routes.forEach(route => {
+      baseRoutes.push(Object.assign({}, route));
+    });
+
+    // Create localized routes objects.
+    let localizedRoutes = [...baseRoutes];
+    localizedRoutes.forEach(topLevelRoute => {
+      topLevelRoute.path = `/${locale}${topLevelRoute.path}`;
+    });
+
+    newRoutes = localizedRoutes.concat(newRoutes);
   });
 
   return newRoutes;
@@ -48,13 +62,16 @@ interface SwingbyAppProps {
 }
 
 const SwingbyApp = (props: SwingbyAppProps) => {
-  console.log(i18nRoutes(props.routes));
+  const routes = process.env.SWINGBY_I18N
+    ? i18nRoutes(props.routes)
+    : props.routes;
+
   return (
     <div className="s-app">
       <BrowserRouter>
         <Suspense fallback={<div>Loading</div>} >
           <Routes>
-            {mapRoutes(props.routes)}
+            {mapRoutes(routes)}
           </Routes>
         </Suspense>
       </BrowserRouter>

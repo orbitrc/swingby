@@ -1,5 +1,5 @@
 module.exports = {
-  i18n: false,
+  i18n: undefined,
 
   devServer: {
     port: 3000,
