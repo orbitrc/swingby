@@ -19,17 +19,22 @@ class Translator {
     return text;
   }
 
-  public translate(key: string, ...numbers: number[]): string {
+  public translate(key: string, num?: number): string {
     const location = useLocation();
     const locale = getCurrentLocale(location.pathname);
 
     const message = this.messages[key][locale];
 
     if (message instanceof CardinalPluralRule) {
-      const formatter = Intl.PluralRules(locale, { type: 'cardinal' });
-      return 'plural rules';
+      const formatter = new Intl.PluralRules(locale, { type: 'cardinal' });
+      const select = formatter.select(num);
+
+      return message[select];
     } else if (message instanceof OrdinalPluralRule) {
-      return 'ordinal rules';
+      const formatter = new Intl.PluralRules(locale, { type: 'ordinal' });
+      const select = formatter.select(num);
+
+      return message[select];
     } else {
       return message;
     }

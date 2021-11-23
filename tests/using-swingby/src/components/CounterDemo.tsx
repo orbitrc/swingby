@@ -18,7 +18,7 @@ const CounterDemo = () => {
       <div
         className="text-h1"
       >{count}{messages['counter-unit'][locale]}</div>
-      <div>{_('counter-append')}</div>
+      <div>{_('counter-append', count)}</div>
       <Button
         label="＋"
         onClick={() => {

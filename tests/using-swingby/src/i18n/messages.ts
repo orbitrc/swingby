@@ -24,7 +24,10 @@ const messages: Messages = {
       one: 'time.',
       other: 'times.',
     }) as Message,
-    'en-US': 'times',
+    'en-US': new CardinalPluralRule({
+      one: 'time.',
+      other: 'times.',
+    }) as Message,
     'ja-JP': 'クリックしました。',
     'ko-KR': '클릭하셨습니다.',
   } as {[key in LocaleKey]: string},
