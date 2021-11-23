@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 
+import { getCurrentLocale } from '../utils';
+
 const breakpoints = {
   xs: 0,
   sm: 600,
@@ -36,29 +38,6 @@ interface SScreen {
 interface SI18n {
   locale: string;
   systemLocale: string;
-}
-
-function getCurrentLocale(pathname: string): string {
-  // Returns browser's locale if i18n not set.
-  if (!process.env.SWINGBY_I18N) {
-    return navigator.language;
-  }
-
-  const locales = process.env.SWINGBY_I18N_LOCALES.split(':');
-
-  // Returns default locale if pathname is `/`.
-  if (pathname === '/') {
-    return process.env.SWINGBY_I18N_DEFAULT_LOCALE;
-  }
-  // If first path not in locales, returns default locale.
-  const first = pathname.split('/')[1];
-  if (!locales.includes(first)) {
-    return process.env.SWINGBY_I18N_DEFAULT_LOCALE;
-  }
-  // Returns matched locale.
-  if (locales.includes(first)) {
-    return first;
-  }
 }
 
 interface SwingbyObject {
@@ -111,6 +90,9 @@ function useSwingby(): SwingbyObject {
   };
 }
 
+import { useL10n } from './useL10n'
+
 export {
   useSwingby,
+  useL10n,
 }

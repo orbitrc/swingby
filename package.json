@@ -9,10 +9,12 @@
   "source": "index.ts",
   "files": [
     "dist",
-    "configure"
+    "configure",
+    "l10n"
   ],
   "exports": {
-    "./configure": "./configure/index.js"
+    "./configure": "./configure/index.js",
+    "./l10n": "./l10n/index.js"
   },
   "scripts": {
     "build": "tsc -p . && rollup -c",

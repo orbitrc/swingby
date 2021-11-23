@@ -14,6 +14,7 @@ import Section from './src/components/Section'
 
 import {
   useSwingby,
+  useL10n,
 } from './src/hooks'
 
 export {
@@ -30,4 +31,5 @@ export {
   Section,
 
   useSwingby,
+  useL10n,
 }

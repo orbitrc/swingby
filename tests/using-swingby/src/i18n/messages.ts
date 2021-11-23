@@ -1,10 +1,12 @@
+import { Message, Messages, CardinalPluralRule } from 'swingby/l10n'
+
 export type LocaleKey =
   | 'en-GB'
   | 'en-US'
   | 'ja-JP'
   | 'ko-KR';
 
-const messages = {
+const messages: Messages = {
   'counter-prepend': {
     'en-GB': 'You have clicked',
     'en-US': 'You have clicked',
@@ -18,7 +20,10 @@ const messages = {
     'ko-KR': '회',
   } as {[key in LocaleKey]: string},
   'counter-append': {
-    'en-GB': 'times.',
+    'en-GB': new CardinalPluralRule({
+      one: 'time.',
+      other: 'times.',
+    }) as Message,
     'en-US': 'times',
     'ja-JP': 'クリックしました。',
     'ko-KR': '클릭하셨습니다.',
