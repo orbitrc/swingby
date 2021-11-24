@@ -2,3 +2,8 @@
   transition-property: width, height;
   transition-timing-function: ease-out;
 }
+
+.s-transition--wake-up-enter {
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+}

@@ -8,6 +8,7 @@ import { SColor, isSColor } from '../types'
 import { useSwingby } from '../hooks/'
 
 import Transition from './Transition'
+import TransitionGroup from './TransitionGroup'
 
 interface HeaderBarProps {
   children: React.ReactNode;
@@ -185,12 +186,18 @@ const HeaderBar = (props: HeaderBarProps) => {
                 top: props.height,
               }, bgStyle)}
             >
-              {headerBarLinks.map((link, index: number) => (
-                React.cloneElement(link as React.ReactElement, {
-                  key: index,
-                  height: props.height,
-                })
-              ))}
+              <TransitionGroup
+                in={showLinks}
+                duration={600}
+                name="wake-up"
+              >
+                {headerBarLinks.map((link, index: number) => (
+                  React.cloneElement(link as React.ReactElement, {
+                    key: index,
+                    height: props.height,
+                  })
+                ))}
+              </TransitionGroup>
             </div>
           </Transition>
       }

@@ -8,6 +8,7 @@ interface HeaderBarLinkProps {
   height: string;
   to: string;
   label: string;
+  style: React.CSSProperties;
   __TYPE: string;
 }
 
@@ -16,6 +17,7 @@ const HeaderBarLink = (props: HeaderBarLinkProps) => {
     <div className={`s-header-bar-link ${props.className}`}
       style={{
         height: props.height,
+        ...props.style,
       }}
     >
       <Link className="s-header-bar__link"
@@ -32,6 +34,7 @@ HeaderBarLink.defaultProps = {
   height: '48px',
   to: '/',
   label: '',
+  style: {},
   __TYPE: 'HeaderBarLink',
 };
 
