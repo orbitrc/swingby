@@ -7,6 +7,8 @@ import './HeaderBar.scss'
 import { SColor, isSColor } from '../types'
 import { useSwingby } from '../hooks/'
 
+import Transition from './Transition'
+
 interface HeaderBarProps {
   children: React.ReactNode;
   className: string;
@@ -159,28 +161,38 @@ const HeaderBar = (props: HeaderBarProps) => {
       </div>
       {/* Header bar links */}
       {!isMobile()
+        /* Desktop */
         ? headerBarLinks.map((link, index: number) => (
             React.cloneElement(link as React.ReactElement, {
               key: index,
               height: props.height,
             })
           ))
-        : <div
-            className={classNames({
-              's-header-bar__links--mobile': true,
-            }, bgClass)}
-            style={Object.assign({
-              display: showLinks ? 'initial' : 'none',
-              top: props.height,
-            }, bgStyle)}
+        /* Mobile */
+        : <Transition
+            in={showLinks}
+            name="scale"
+            initialStyle={{
+              height: '0',
+            }}
           >
-            {headerBarLinks.map((link, index: number) => (
-              React.cloneElement(link as React.ReactElement, {
-                key: index,
-                height: props.height,
-              })
-            ))}
-          </div>
+            <div
+              className={classNames({
+                's-header-bar__links--mobile': true,
+              }, bgClass)}
+              style={Object.assign({
+                height: !showLinks ? '0' : '100vh',
+                top: props.height,
+              }, bgStyle)}
+            >
+              {headerBarLinks.map((link, index: number) => (
+                React.cloneElement(link as React.ReactElement, {
+                  key: index,
+                  height: props.height,
+                })
+              ))}
+            </div>
+          </Transition>
       }
     </div>
   );
