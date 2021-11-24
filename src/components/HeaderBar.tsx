@@ -190,11 +190,15 @@ const HeaderBar = (props: HeaderBarProps) => {
                 in={showLinks}
                 duration={600}
                 name="wake-up"
+                sequential
               >
                 {headerBarLinks.map((link, index: number) => (
                   React.cloneElement(link as React.ReactElement, {
                     key: index,
                     height: props.height,
+                    style: {
+                      paddingLeft: '1rem',
+                    },
                   })
                 ))}
               </TransitionGroup>

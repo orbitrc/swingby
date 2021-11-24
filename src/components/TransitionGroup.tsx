@@ -10,6 +10,7 @@ interface TransitionGroupProps {
   in: boolean;
   initialStyle: React.CSSProperties;
   name: 'scale' | 'wake-up';
+  sequential: boolean;
 }
 
 const TransitionGroup = (props: TransitionGroupProps) => {
@@ -61,6 +62,7 @@ const TransitionGroup = (props: TransitionGroupProps) => {
               ...styles,
               ...child.props.style,
               ...initialStyle,
+              transitionDelay: props.sequential ? `${index * 100}ms` : '0',
             },
           });
         }
@@ -75,6 +77,7 @@ TransitionGroup.defaultProps = {
   in: true,
   initialStyle: {},
   name: 'scale',
+  sequential: false,
 };
 
 export default TransitionGroup
