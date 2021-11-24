@@ -39,7 +39,7 @@ const Transition = (props: TransitionProps) => {
 
   return (
     <>
-      {props.in &&
+      {
         React.Children.toArray(props.children).map(child => {
           if (React.isValidElement(child)) {
             return React.cloneElement(child, {
