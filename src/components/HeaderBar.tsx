@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import classNames from 'classnames'
 
@@ -28,24 +28,6 @@ const HeaderBar = (props: HeaderBarProps) => {
   const swingby = useSwingby();
 
   const [showLinks, setShowLinks] = useState(false);
-
-  useEffect(() => {
-    const linksElements = document.getElementsByClassName(
-      's-header-bar__links--mobile'
-    );
-    const linksElement = linksElements.length > 0 ? linksElements[0] : null;
-    if (linksElement) {
-      const linkElements = linksElement.getElementsByClassName(
-        's-header-bar-link'
-      );
-      for (let i = 0; i < linkElements.length; ++i) {
-        const el = linkElements[i];
-        setTimeout(() => {
-          el.classList.add('s-header-bar-link--show');
-        }, i * 500);
-      }
-    }
-  }, []);
 
   function isMobile(): boolean {
     switch (props.mobileSize) {
