@@ -4,6 +4,7 @@ import SwingbyApp from './src/components/SwingbyApp'
 
 import TestComponent from './src/components/TestComponent'
 import Button from './src/components/Button'
+import Footer from './src/components/Footer'
 import HeaderBar from './src/components/HeaderBar'
 import HeaderBarLink from './src/components/HeaderBarLink'
 import Layout from './src/components/Layout'
@@ -22,6 +23,7 @@ export {
 
   TestComponent,
   Button,
+  Footer,
   HeaderBar,
   HeaderBarLink,
   Layout,

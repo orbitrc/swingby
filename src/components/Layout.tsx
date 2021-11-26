@@ -33,11 +33,23 @@ const Layout = (props: LayoutProps) => {
     return child.props.__TYPE === 'PageContainer';
   });
 
+  const footer = React.Children.toArray(props.children).find(child => {
+    if (!React.isValidElement(child) || typeof child.type === 'string') {
+      return;
+    }
+
+    return child.props.__TYPE === 'Footer';
+  });
+
   //=====================
   // Children Props
   //=====================
   const headerBarHeight = (headerBar)
     ? (headerBar as React.ReactElement).props.height
+    : '0';
+
+  const footerHeight = (footer)
+    ? (footer as React.ReactElement).props.height
     : '0';
 
   //=================
@@ -58,8 +70,12 @@ const Layout = (props: LayoutProps) => {
         React.cloneElement(pageContainer as React.ReactElement, {
           style: {
             paddingTop: headerBarHeight,
+            paddingBottom: footerHeight,
           },
         })
+      }
+      {footer &&
+        footer
       }
     </div>
   );

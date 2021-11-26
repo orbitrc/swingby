@@ -20,11 +20,23 @@ const Page = (props: PageProps) => {
   const headerBars = document.getElementsByClassName('s-header-bar');
   const headerBar = headerBars.length > 0 ? headerBars[0] as HTMLElement : null;
 
+  const footers = document.getElementsByClassName('s-footer');
+  const footer = footers.length > 0 ? footers[0] as HTMLElement : null;
+
   const headerBarHeight = headerBar
     ? parseFloat(headerBar.style.height)
     : 0;
 
-  const minHeight = `${swingby.screen.height - headerBarHeight}px`
+  const footerHeight = footer
+    ? parseFloat(footer.style.height)
+    : 0;
+
+  const minHeightNumber = swingby.screen.height
+    - headerBarHeight
+    - footerHeight;
+
+  const minHeight = `${minHeightNumber}px`
+  console.log(minHeight);
 
   //============
   // Style

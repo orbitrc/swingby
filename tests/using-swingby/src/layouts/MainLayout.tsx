@@ -6,6 +6,7 @@ import {
   HeaderBar,
   HeaderBarLink,
   PageContainer,
+  Footer,
 } from 'swingby'
 
 const MainLayout = () => {
@@ -33,6 +34,9 @@ const MainLayout = () => {
       <PageContainer>
         <Outlet />
       </PageContainer>
+      <Footer>
+        <div>Copyright &copy; 2021 NAME All rights reserved.</div>
+      </Footer>
     </Layout>
   );
 }
