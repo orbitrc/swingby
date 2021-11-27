@@ -48,3 +48,10 @@ export function isSColor(color: string): boolean {
 
   return false;
 }
+
+export type SScreenName =
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl';

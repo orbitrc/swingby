@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import { getCurrentLocale } from '../utils';
+import { SScreenName } from '../types'
 
 const breakpoints = {
   xs: 0,
@@ -10,8 +11,6 @@ const breakpoints = {
   lg: 1440,
   xl: 1920,
 };
-
-type SScreenName = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 function getScreenName(): SScreenName {
   const width = window.innerWidth;
@@ -32,7 +31,7 @@ interface SScreen {
   width: number;
   height: number;
   name: SScreenName;
-  sizes: Object;
+  sizes: Record<SScreenName, number>;
 }
 
 interface SI18n {
