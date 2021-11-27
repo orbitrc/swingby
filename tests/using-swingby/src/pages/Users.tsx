@@ -1,8 +1,16 @@
 import React from 'react'
 
-import { Page, List, Section } from 'swingby'
+import { Page, List, Section, useSwingby } from 'swingby'
+
+import { LocaleKey } from '../i18n/messages'
+import users from '../i18n/users'
 
 const Users = () => {
+  const swingby = useSwingby();
+  const locale = swingby.i18n.locale as LocaleKey;
+
+  const userList = users[locale];
+
   return (
     <Page>
       <div>
@@ -13,9 +21,9 @@ const Users = () => {
               <div>Users</div>
             }
           >
-            <div>Jane Doe</div>
-            <div>John Smith</div>
-            <button>Click!</button>
+            {userList.map(user => {
+              return <div>{user.name as string}</div>
+            })}
           </Section>
         </List>
       </div>
