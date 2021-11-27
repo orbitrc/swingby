@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Layout.scss'
+
 import { useSwingby } from '../hooks'
 
 interface LayoutProps {
