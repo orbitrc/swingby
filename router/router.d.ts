@@ -11,4 +11,6 @@ declare module "swingby/router" {
 
   export interface SwingbyNavigateOptions extends NavigateOptions {
   }
+
+  export function useNavigate(): SwingbyNavigateFunction;
 }

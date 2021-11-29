@@ -10,7 +10,8 @@
   "files": [
     "dist",
     "configure",
-    "l10n"
+    "l10n",
+    "router"
   ],
   "exports": {
     "./configure": "./configure/index.js",
