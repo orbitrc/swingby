@@ -21,6 +21,27 @@ export default [
       dts(),
     ],
   },
+  // Router
+  {
+    input: './dist/dts/src/router/index.d.ts',
+    output: [
+      { file: 'dist/router.d.ts', format: 'es' },
+    ],
+    plugins: [
+      dts(),
+    ],
+  },
+  {
+    input: './src/router/index.ts',
+    output: [
+      { file: 'dist/router.cjs.js', format: 'cjs' },
+      { file: 'dist/router.esm.js', format: 'esm' },
+    ],
+    plugins: [
+      typescript(),
+    ],
+  },
+  // Main
   {
     input: pkg.source,
     output: [

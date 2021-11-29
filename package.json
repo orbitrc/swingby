@@ -14,7 +14,8 @@
   ],
   "exports": {
     "./configure": "./configure/index.js",
-    "./l10n": "./l10n/index.js"
+    "./l10n": "./l10n/index.js",
+    "./router": "./src/router/router.ts"
   },
   "scripts": {
     "build": "tsc -p . && rollup -c",
