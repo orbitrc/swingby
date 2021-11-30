@@ -10,6 +10,7 @@ declare module "swingby/router" {
   }
 
   export interface SwingbyNavigateOptions extends NavigateOptions {
+    locale?: 'auto' | string | false;
   }
 
   export function useNavigate(): SwingbyNavigateFunction;
