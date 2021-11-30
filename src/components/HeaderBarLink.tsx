@@ -21,7 +21,7 @@ const HeaderBarLink = (props: HeaderBarLinkProps) => {
         ...props.style,
       }}
     >
-      <Link className="s-header-bar__link"
+      <Link className="s-header-bar-link__link"
         to={props.to}
       >
         {props.label}
