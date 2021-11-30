@@ -1,4 +1,5 @@
 import React from 'react'
+/* DEBUG */ import { Link } from 'swingby/router'
 
 import { Page, List, Section, useSwingby } from 'swingby'
 
@@ -27,6 +28,7 @@ const Users = () => {
           </Section>
         </List>
       </div>
+      <Link to="counter">hello</Link>
     </Page>
   );
 }

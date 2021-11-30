@@ -114,7 +114,9 @@ function getClientEnvironment(publicUrl) {
         // It is defined here so it is available in the webpackHotDevClient.
         FAST_REFRESH: process.env.FAST_REFRESH !== 'false',
         // Runtime Swingby environments.
-        SWINGBY_I18N: config.i18n !== undefined,
+        SWINGBY_I18N: config.i18n
+          ? true
+          : undefined,
         SWINGBY_I18N_LOCALES: config.i18n
           ? config.i18n.locales.join(':')
           : undefined,
