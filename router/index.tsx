@@ -76,6 +76,7 @@ const Link = (props: LinkProps) => {
   }
   return (
     <a
+      className={props.className}
       href={href}
       onClick={handleClick}
     >

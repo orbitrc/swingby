@@ -53,6 +53,7 @@ const Link = (props) => {
     }
     const href = useHref(to);
     const { replace, state, target } = props;
+    // Below code from `https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/index.tsx#L218`.
     const internalOnClick = useLinkClickHandler(to, { replace, state, target });
     function handleClick(event) {
         if (props.onClick)
@@ -61,7 +62,7 @@ const Link = (props) => {
             internalOnClick(event);
         }
     }
-    return (React.createElement("a", { href: href, onClick: handleClick }, props.children));
+    return (React.createElement("a", { className: props.className, href: href, onClick: handleClick }, props.children));
 };
 Link.defaultProps = {
     replace: false,
