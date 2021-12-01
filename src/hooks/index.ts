@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
 
 import { getCurrentLocale } from '../utils';
 import { SScreenName } from '../types'
@@ -77,7 +76,6 @@ function useSwingby(): SwingbyObject {
   //=============
   // I18n
   //=============
-  const location = useLocation();
   const i18n: SI18n = {
     locale: getCurrentLocale(location.pathname),
     systemLocale: navigator.language,

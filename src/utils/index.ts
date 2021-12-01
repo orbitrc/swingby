@@ -1,6 +1,6 @@
 export function getCurrentLocale(pathname: string): string {
   // Returns browser's locale if i18n not set.
-  if (!process.env.SWINGBY_I18N) {
+  if (process.env.SWINGBY_I18N === undefined) {
     return navigator.language;
   }
 
