@@ -57,4 +57,11 @@
     width: 100%;
     overflow: hidden;
   }
+
+  .s-header-bar__append {
+    &.s-header-bar__append--mobile {
+      position: absolute;
+      right: 18px;
+    }
+  }
 }

@@ -15,6 +15,9 @@ const MainLayout = () => {
       <HeaderBar
         logo="https://raw.githubusercontent.com/orbitrc/orbit-logo/master/orbit-logo.svg"
         title="Swingby Demo"
+        append={(
+          <div>Append</div>
+        )}
       >
         <HeaderBarLink
           className="text-weight-bold"

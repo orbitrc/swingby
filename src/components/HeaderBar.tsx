@@ -13,6 +13,7 @@ import TransitionGroup from './TransitionGroup'
 interface HeaderBarProps {
   children: React.ReactNode;
   className: string;
+  append: React.ReactNode;
   color: SColor | string;
   height: string;
   logo: string;
@@ -187,12 +188,23 @@ const HeaderBar = (props: HeaderBarProps) => {
             </div>
           </Transition>
       }
+      {props.append &&
+        <div
+          className={classNames({
+            's-header-bar__append': true,
+            's-header-bar__append--mobile': isMobile(),
+          })}
+        >
+          {props.append}
+        </div>
+      }
     </div>
   );
 }
 
 HeaderBar.defaultProps = {
   className: '',
+  append: undefined,
   color: 'accent',
   height: '64px',
   logo: '',
