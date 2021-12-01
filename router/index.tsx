@@ -4,6 +4,7 @@ import React from 'react'
 import {
   To,
   useNavigate as reactUseNavigate,
+  useLocation as reactUseLocation,
   useHref,
   useLinkClickHandler,
 } from 'react-router-dom'
@@ -11,6 +12,7 @@ import {
 import {
   SwingbyNavigateFunction,
   SwingbyNavigateOptions,
+  SwingbyLocation,
   LinkProps,
 } from 'swingby/router'
 
@@ -39,13 +41,32 @@ function useNavigate(): SwingbyNavigateFunction {
       }
       // Append locale path to `to`.
       if (typeof to === 'string') {
-        to = `${localePath}/${to}`;
+        to = path.resolve(path.join(localePath, to)) as string;
       } else if (typeof to === 'object') {
         to.pathname ? to.pathname = `${localePath}/${to.pathname}` : null;
       }
       reactNavigate(to, options);
     }
   }
+}
+
+//==================
+// useLocation Hook
+//==================
+function useLocation(): SwingbyLocation {
+  const reactLocation = reactUseLocation() as SwingbyLocation;
+
+  if (process.env.SWINGBY_I18N !== undefined) {
+    // Set locale.
+    reactLocation.locale = getCurrentLocale(location.pathname);
+    // Change pathname without locale.
+    reactLocation.pathname = reactLocation.pathname.replace(
+      `/${reactLocation.locale}`,
+      ''
+    );
+  }
+
+  return reactLocation;
 }
 
 //==================
@@ -94,5 +115,6 @@ export {
   SwingbyNavigateOptions,
 
   useNavigate,
+  useLocation,
   Link,
 }

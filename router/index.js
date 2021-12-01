@@ -1,6 +1,6 @@
 import path from 'path';
 import React from 'react';
-import { useNavigate as reactUseNavigate, useHref, useLinkClickHandler, } from 'react-router-dom';
+import { useNavigate as reactUseNavigate, useLocation as reactUseLocation, useHref, useLinkClickHandler, } from 'react-router-dom';
 import { getCurrentLocale, } from '../src/utils';
 //====================
 // useNavigate Hook
@@ -25,7 +25,7 @@ function useNavigate() {
             }
             // Append locale path to `to`.
             if (typeof to === 'string') {
-                to = `${localePath}/${to}`;
+                to = path.resolve(path.join(localePath, to));
             }
             else if (typeof to === 'object') {
                 to.pathname ? to.pathname = `${localePath}/${to.pathname}` : null;
@@ -33,6 +33,19 @@ function useNavigate() {
             reactNavigate(to, options);
         }
     };
+}
+//==================
+// useLocation Hook
+//==================
+function useLocation() {
+    const reactLocation = reactUseLocation();
+    if (process.env.SWINGBY_I18N !== undefined) {
+        // Set locale.
+        reactLocation.locale = getCurrentLocale(location.pathname);
+        // Change pathname without locale.
+        reactLocation.pathname = reactLocation.pathname.replace(`/${reactLocation.locale}`, '');
+    }
+    return reactLocation;
 }
 //==================
 // Link Component
@@ -67,4 +80,4 @@ const Link = (props) => {
 Link.defaultProps = {
     replace: false,
 };
-export { useNavigate, Link, };
+export { useNavigate, useLocation, Link, };

@@ -3,6 +3,7 @@ declare module "swingby/router" {
   import {
     To,
     NavigateOptions,
+    Location,
   } from 'react-router-dom'
 
   //===================
@@ -18,6 +19,15 @@ declare module "swingby/router" {
   }
 
   export function useNavigate(): SwingbyNavigateFunction;
+
+  //==================
+  // useLocation Hook
+  //==================
+  export interface SwingbyLocation extends Location {
+    locale?: string;
+  }
+
+  export function useLocation(): SwingbyLocation;
 
   //==================
   // Link Component

@@ -23,7 +23,11 @@ const Users = () => {
             }
           >
             {userList.map(user => {
-              return <div>{user.name as string}</div>
+              return (
+                <div
+                  key={user.toString()}
+                >{user.name as string}</div>
+              );
             })}
           </Section>
         </List>

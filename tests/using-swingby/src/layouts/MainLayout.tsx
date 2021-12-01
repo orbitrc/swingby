@@ -9,6 +9,8 @@ import {
   Footer,
 } from 'swingby'
 
+import LanguageSelector from '../components/LanguageSelector'
+
 const MainLayout = () => {
   return (
     <Layout className="main-layout">
@@ -16,7 +18,7 @@ const MainLayout = () => {
         logo="https://raw.githubusercontent.com/orbitrc/orbit-logo/master/orbit-logo.svg"
         title="Swingby Demo"
         append={(
-          <div>Append</div>
+          <LanguageSelector />
         )}
       >
         <HeaderBarLink
