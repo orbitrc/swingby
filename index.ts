@@ -12,6 +12,7 @@ import List from './src/components/List'
 import Page from './src/components/Page'
 import PageContainer from './src/components/PageContainer'
 import Section from './src/components/Section'
+import Select from './src/components/Select'
 
 import {
   useSwingby,
@@ -31,6 +32,7 @@ export {
   Page,
   PageContainer,
   Section,
+  Select,
 
   useSwingby,
   useL10n,

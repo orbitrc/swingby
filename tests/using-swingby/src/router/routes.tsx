@@ -6,6 +6,7 @@ const Index = React.lazy(() => import('../pages/Index'));
 const Counter = React.lazy(() => import('../pages/Counter'));
 const Users = React.lazy(() => import ('../pages/Users'));
 const UserDetail = React.lazy(() => import ('../pages/UserDetail'));
+const Playground = React.lazy(() => import('../pages/Playground'));
 const Error404 = React.lazy(() => import('../pages/Error404'));
 
 const routes: RouteObject[] = [
@@ -28,6 +29,10 @@ const routes: RouteObject[] = [
       {
         path: 'users/:id',
         element: <UserDetail />,
+      },
+      {
+        path: 'playground',
+        element: <Playground />,
       },
     ],
   },
