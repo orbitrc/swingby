@@ -35,8 +35,7 @@ const Page = (props: PageProps) => {
     - headerBarHeight
     - footerHeight;
 
-  const minHeight = `${minHeightNumber}px`
-  console.log(minHeight);
+  const minHeight = `${minHeightNumber}px`;
 
   //============
   // Style
