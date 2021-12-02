@@ -32,7 +32,7 @@ const LanguageSelector = () => {
     if (location.locale !== currentLocale) {
       navigate(location.pathname, { locale: currentLocale });
     }
-  }, [currentLocale])
+  }, [currentLocale, location.locale, location.pathname, navigate])
 
   return (
     <Select

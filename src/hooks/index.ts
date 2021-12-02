@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 import { getCurrentLocale } from '../utils';
 import { SScreenName } from '../types'
+import { useLocation } from 'swingby/router'
 
 const breakpoints = {
   xs: 0,
@@ -76,8 +77,17 @@ function useSwingby(): SwingbyObject {
   //=============
   // I18n
   //=============
+  const location = useLocation();
+  const [currentLocale, setCurrentLocale] = useState(
+    location.locale
+  );
+
+  useEffect(() => {
+    setCurrentLocale(location.locale);
+  }, [location.locale]);
+
   const i18n: SI18n = {
-    locale: getCurrentLocale(location.pathname),
+    locale: currentLocale,
     systemLocale: navigator.language,
   };
 

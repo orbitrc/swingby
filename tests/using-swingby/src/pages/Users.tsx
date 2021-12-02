@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 /* DEBUG */ import { Link } from 'swingby/router'
 
 import { Page, List, Section, useSwingby } from 'swingby'
@@ -10,7 +10,11 @@ const Users = () => {
   const swingby = useSwingby();
   const locale = swingby.i18n.locale as LocaleKey;
 
-  const userList = users[locale];
+  const [userList, setUserList] = useState(users[locale]);
+
+  useEffect(() => {
+    setUserList(users[locale]);
+  }, [locale]);
 
   return (
     <Page>
