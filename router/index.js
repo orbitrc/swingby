@@ -1,7 +1,7 @@
 import path from 'path';
 import React from 'react';
 import { useNavigate as reactUseNavigate, useLocation as reactUseLocation, useHref, useLinkClickHandler, } from 'react-router-dom';
-import { getCurrentLocale, } from '../src/utils';
+import { getCurrentLocale, containsLocale, } from '../src/utils';
 //====================
 // useNavigate Hook
 //====================
@@ -56,11 +56,17 @@ const Link = (props) => {
         : props.to.pathname;
     // Use locale.
     if (process.env.SWINGBY_I18N !== undefined) {
+        const currentLocale = getCurrentLocale(location.pathname);
         if (to.startsWith('/')) {
-            to = `/${getCurrentLocale(location.pathname)}${to}`;
+            to = (containsLocale(location.pathname))
+                ? `/${currentLocale}${to}`
+                : `/${to}`;
+            to = path.resolve(to);
         }
         else {
-            const localePath = `/${getCurrentLocale(location.pathname)}`;
+            const localePath = (containsLocale(location.pathname))
+                ? `/${currentLocale}`
+                : '/';
             to = path.resolve(localePath, location.pathname, '..', to);
         }
     }

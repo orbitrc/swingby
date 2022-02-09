@@ -18,6 +18,7 @@ import {
 
 import {
   getCurrentLocale,
+  containsLocale,
 } from '../src/utils'
 
 //====================
@@ -78,10 +79,17 @@ const Link = (props: LinkProps) => {
     : props.to.pathname;
   // Use locale.
   if (process.env.SWINGBY_I18N !== undefined) {
+    const currentLocale = getCurrentLocale(location.pathname);
+
     if (to.startsWith('/')) {
-      to = `/${getCurrentLocale(location.pathname)}${to}`;
+      to = (containsLocale(location.pathname))
+        ? `/${currentLocale}${to}`
+        : `/${to}`;
+      to = path.resolve(to);
     } else {
-      const localePath = `/${getCurrentLocale(location.pathname)}`;
+      const localePath = (containsLocale(location.pathname))
+        ? `/${currentLocale}`
+        : '/';
       to = path.resolve(localePath, location.pathname, '..', to);
     }
   }
