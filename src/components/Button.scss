@@ -7,6 +7,10 @@
     border-radius: 3px;
   }
 
+  &.s-button--round {
+    border-radius: 50px;
+  }
+
   &.s-button--sharp {
     border-radius: 0;
   }
