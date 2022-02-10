@@ -61,6 +61,10 @@ const Layout = (props: LayoutProps) => {
     minHeight: `${swingby.screen.height}px`,
   }, props.style);
 
+  const pageContainerStyle = (pageContainer)
+    ? (pageContainer as React.ReactElement).props.style
+    : {};
+
   return (
     <div className="s-layout"
       style={styles}
@@ -71,6 +75,7 @@ const Layout = (props: LayoutProps) => {
       {pageContainer &&
         React.cloneElement(pageContainer as React.ReactElement, {
           style: {
+            ...pageContainerStyle,
             paddingTop: headerBarHeight,
             paddingBottom: footerHeight,
           },

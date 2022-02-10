@@ -9,6 +9,7 @@ interface NavigationProps {
   className: string;
   mobileSize: SScreenName;
   width: string;
+  __TYPE: string;
 }
 
 const Navigation = (props: NavigationProps) => {
@@ -24,6 +25,7 @@ Navigation.defaultProps = {
   className: '',
   mobileSize: 'sm',
   width: '128px',
-}
+  __TYPE: 'Navigation',
+} as NavigationProps;
 
 export default Navigation

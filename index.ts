@@ -10,6 +10,7 @@ import HeaderBarLink from './src/components/HeaderBarLink'
 import Layout from './src/components/Layout'
 import List from './src/components/List'
 import ListItem from './src/components/ListItem'
+import Navigation from './src/components/Navigation'
 import Page from './src/components/Page'
 import PageContainer from './src/components/PageContainer'
 import Section from './src/components/Section'
@@ -31,6 +32,7 @@ export {
   Layout,
   List,
   ListItem,
+  Navigation,
   Page,
   PageContainer,
   Section,
