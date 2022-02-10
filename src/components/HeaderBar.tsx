@@ -16,7 +16,13 @@ interface HeaderBarProps {
   append: React.ReactNode;
   color: SColor | string;
   height: string;
+  /**
+   * Header bar logo image src.
+   */
   logo: string;
+  /**
+   * Breakpoint for mobile mode.
+   */
   mobileSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   title: string;
   __TYPE: string;
