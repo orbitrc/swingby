@@ -1,3 +1,5 @@
 .s-list-item {
-  background-color: cyan;
+  .s-list-item__prepend {
+    margin-right: 1rem;
+  }
 }

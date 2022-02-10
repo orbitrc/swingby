@@ -4,6 +4,7 @@ import './List.scss'
 
 interface ListProps {
   children: React.ReactNode;
+  __TYPE: string;
 }
 
 const List = (props: ListProps) => {
@@ -16,6 +17,7 @@ const List = (props: ListProps) => {
 
 List.defaultProps = {
   children: [],
+  __TYPE: 'List',
 };
 
 export default List

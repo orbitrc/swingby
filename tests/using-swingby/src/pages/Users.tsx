@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 /* DEBUG */ import { Link } from 'swingby/router'
 
-import { Page, List, Section, useSwingby } from 'swingby'
+import { Page, List, Section, ListItem, useSwingby } from 'swingby'
 
 import { LocaleKey } from '../i18n/messages'
 import users from '../i18n/users'
@@ -28,9 +28,10 @@ const Users = () => {
           >
             {userList.map(user => {
               return (
-                <div
+                <ListItem
                   key={user.toString()}
-                >{user.name as string}</div>
+                  label={user.name as string}
+                >{user.name as string}</ListItem>
               );
             })}
           </Section>
