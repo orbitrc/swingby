@@ -14,4 +14,8 @@
   &.s-button--sharp {
     border-radius: 0;
   }
+
+  &:active {
+    filter: brightness(1.4);
+  }
 }
