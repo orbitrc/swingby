@@ -11,6 +11,7 @@ import {
 } from 'swingby'
 
 import LanguageSelector from '../components/LanguageSelector'
+import NavigationContent from '../components/NavigationContent'
 
 const MainLayout = () => {
   return (
@@ -45,8 +46,10 @@ const MainLayout = () => {
           margin: '0 auto',
         }}
       >
-        <Navigation>
-          <div>Nav!</div>
+        <Navigation
+          width="256px"
+        >
+          <NavigationContent />
         </Navigation>
         <Outlet />
       </PageContainer>
