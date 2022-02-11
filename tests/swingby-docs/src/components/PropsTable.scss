@@ -1,0 +1,15 @@
+.props-table {
+  .props-table__th {
+    color: var(--s-accent);
+    border-bottom: 1px solid var(--s-grey);
+  }
+
+  .props-table__tr {
+    padding-bottom: 12px;
+  }
+
+  .props-table__td {
+    padding: 4px 8px;
+    box-sizing: border-box;
+  }
+}

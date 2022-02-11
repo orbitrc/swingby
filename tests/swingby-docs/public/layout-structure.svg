@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="400" height="300" version="1.1" viewBox="0 0 105.83 79.375" xmlns="http://www.w3.org/2000/svg">
+ <rect x="6.7962" y="8.566" width="92.622" height="65.401" fill="#ccc" stroke="#000" stroke-linejoin="round" stroke-width=".52917" style="paint-order:stroke fill markers"/>
+ <g transform="translate(-3.9548 25.973)">
+  <rect x="15.803" y="-19.732" width="15.451" height="5.1965" fill="#ccc" style="paint-order:stroke fill markers"/>
+  <text x="17.238049" y="-15.875433" fill="#000000" font-family="sans-serif" font-size="3.7042px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="17.238049" y="-15.875433" font-size="3.7042px" stroke-width=".26458">Layout</tspan></text>
+ </g>
+ <rect x="12.386" y="17.201" width="83.788" height="9.6447" fill="#0ff" stroke="#000" stroke-linejoin="round" stroke-width=".52917" style="paint-order:stroke fill markers"/>
+ <rect x="12.514" y="32.265" width="83.532" height="23.984" fill="#0ff" stroke="#000" stroke-linejoin="round" stroke-width=".52917" style="paint-order:stroke fill markers"/>
+ <g transform="translate(1.2426 34.008)">
+  <rect x="15.803" y="-19.685" width="22.861" height="5.6795" fill="#0ff" style="paint-order:stroke fill markers"/>
+  <text x="17.238049" y="-15.875433" fill="#000000" font-family="sans-serif" font-size="3.7042px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="17.238049" y="-15.875433" font-size="3.7042px" stroke-width=".26458">HeaderBar</tspan></text>
+ </g>
+ <g stroke="#000" stroke-linejoin="round" stroke-width=".52917">
+  <rect x="12.514" y="61.541" width="83.788" height="9.6447" fill="#0ff" style="paint-order:stroke fill markers"/>
+  <rect x="15.301" y="39.9" width="29.294" height="14.547" fill="#faa" style="paint-order:stroke fill markers"/>
+  <rect x="47.818" y="39.948" width="45.894" height="14.452" fill="#faa" style="paint-order:stroke fill markers"/>
+ </g>
+ <g transform="translate(1.3707 78.349)">
+  <rect x="15.803" y="-19.522" width="15.01" height="4.818" fill="#0ff" style="paint-order:stroke fill markers"/>
+  <text x="17.238049" y="-15.875433" fill="#000000" font-family="sans-serif" font-size="3.7042px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="17.238049" y="-15.875433" font-size="3.7042px" stroke-width=".26458">Footer</tspan></text>
+ </g>
+ <g transform="translate(2.1332 50.282)">
+  <rect x="15.803" y="-19.609" width="29.495" height="4.7765" fill="#0ff" style="paint-order:stroke fill markers"/>
+  <text x="17.238049" y="-15.875433" fill="#000000" font-family="sans-serif" font-size="3.7042px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="17.238049" y="-15.875433" font-size="3.7042px" stroke-width=".26458">PageContainer</tspan></text>
+ </g>
+ <g transform="translate(1.6556 57.567)">
+  <rect x="15.803" y="-19.609" width="22.256" height="4.7765" fill="#faa" style="paint-order:stroke fill markers"/>
+  <text x="17.238049" y="-15.875433" fill="#000000" font-family="sans-serif" font-size="3.7042px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="17.238049" y="-15.875433" font-size="3.7042px" stroke-width=".26458">Navigation</tspan></text>
+  <g transform="translate(32.62 -.34493)">
+   <rect x="15.803" y="-19.609" width="11.836" height="4.7765" fill="#faa" style="paint-order:stroke fill markers"/>
+   <text x="17.238049" y="-15.875433" fill="#000000" font-family="sans-serif" font-size="3.7042px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="17.238049" y="-15.875433" font-size="3.7042px" stroke-width=".26458">Page</tspan></text>
+  </g>
+ </g>
+</svg>
