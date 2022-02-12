@@ -6,7 +6,12 @@ import './Index.scss'
 
 const Index = () => {
   return (
-    <Page>
+    <Page
+      className="index"
+      style={{
+        padding: '1.5rem',
+      }}
+    >
       <div
         className="index__intro text-h1"
       >

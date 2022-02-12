@@ -27,6 +27,7 @@ const NavigationContent = () => {
       >
         <ListItem
           label="Button"
+          to="/components/button"
         ></ListItem>
       </Section>
     </List>
