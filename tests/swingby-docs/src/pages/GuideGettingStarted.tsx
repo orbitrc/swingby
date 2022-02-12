@@ -2,13 +2,17 @@ import React from 'react'
 
 import { Page } from 'swingby'
 
-const GettingStarted = () => {
+const GuideGettingStarted = () => {
   return (
-    <Page>
+    <Page
+      style={{
+        padding: '1.5rem',
+      }}
+    >
       <div>Getting Started.</div>
       <div>Install Swingby and run!</div>
     </Page>
   );
 }
 
-export default GettingStarted
+export default GuideGettingStarted

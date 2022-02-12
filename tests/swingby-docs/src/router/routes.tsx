@@ -4,7 +4,8 @@ import { RouteObject } from 'react-router-dom'
 const MainLayout = React.lazy(() => import('../layouts/MainLayout'));
 const Index = React.lazy(() => import('../pages/Index'));
 
-const GettingStarted = React.lazy(() => import('../pages/GettingStarted'));
+const Guide = React.lazy(() => import('../pages/Guide'));
+const GuideGettingStarted = React.lazy(() => import('../pages/GuideGettingStarted'));
 
 const Components = React.lazy(() => import('../pages/Components'));
 const ComponentsButton = React.lazy(() => import('../pages/ComponentsButton'));
@@ -21,8 +22,12 @@ const routes: RouteObject[] = [
         element: <Index />,
       },
       {
-        path: 'getting-started',
-        element: <GettingStarted />,
+        path: 'guide',
+        element: <Guide />,
+      },
+      {
+        path: 'guide/getting-started',
+        element: <GuideGettingStarted />,
       },
       {
         path: 'components',

@@ -10,6 +10,7 @@ const NavigationContent = () => {
       >
         <ListItem
           label="Getting Started"
+          to="/guide/getting-started"
         ></ListItem>
         <ListItem
           label="Layout"
