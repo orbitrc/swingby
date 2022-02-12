@@ -10,7 +10,11 @@ const ComponentsButton = () => {
     + '/>';
 
   return (
-    <Page>
+    <Page
+      style={{
+        padding: '1.5rem',
+      }}
+    >
       <div>
         <h1>Button</h1>
         <p>Button.</p>
