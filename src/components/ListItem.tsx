@@ -14,7 +14,7 @@ interface ListItemProps {
   __TYPE: string;
 }
 
-const ListItem = (props:ListItemProps) => {
+const ListItem = (props: ListItemProps) => {
   //===========
   // Class
   //===========
