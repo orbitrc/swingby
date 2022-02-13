@@ -6,6 +6,7 @@ const Index = React.lazy(() => import('../pages/Index'));
 
 const Guide = React.lazy(() => import('../pages/Guide'));
 const GuideGettingStarted = React.lazy(() => import('../pages/GuideGettingStarted'));
+const GuideLayout = React.lazy(() => import('../pages/GuideLayout'));
 
 const Components = React.lazy(() => import('../pages/Components'));
 const ComponentsButton = React.lazy(() => import('../pages/ComponentsButton'));
@@ -28,6 +29,10 @@ const routes: RouteObject[] = [
       {
         path: 'guide/getting-started',
         element: <GuideGettingStarted />,
+      },
+      {
+        path: 'guide/layout',
+        element: <GuideLayout />,
       },
       {
         path: 'components',

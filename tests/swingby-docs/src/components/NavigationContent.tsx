@@ -14,6 +14,7 @@ const NavigationContent = () => {
         ></ListItem>
         <ListItem
           label="Layout"
+          to="/guide/layout"
         ></ListItem>
       </Section>
       <Section
